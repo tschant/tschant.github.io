@@ -6,10 +6,10 @@ $conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 //echo 'Connected successfully';
 mysql_select_db('chefley') or die('Could not select database');
 
-$result = mysql_query("SELECT * FROM CRUISE",$conn2);
+$result = mysql_query("SELECT * FROM Location",$conn2);
 
-while($r = mysql_fetch_row($result)){
-	print_r($r);
-	print_r( "<br/>yo2.");
+$r = mysql_fetch_row($result);
+
+	print_r($r[Image00]);
 }
 ?>
