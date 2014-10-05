@@ -31,7 +31,7 @@ document.onkeypress = function(evt) {
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
     if (charCode == 97){
-    	alert(<? echo $u[1] ?>);
+    	//alert(<? echo $u[1] ?>);
     }
 };
 </script>
