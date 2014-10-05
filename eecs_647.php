@@ -10,6 +10,6 @@ $result = mysql_query("SELECT * FROM Location",$conn2);
 
 $r = mysql_fetch_row($result);
 
-	print_r($r);
+print_r($r);
 
 ?>
