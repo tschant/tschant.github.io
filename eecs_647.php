@@ -30,8 +30,8 @@ document.onkeypress = function(evt) {
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
-    if (charCode == 97){
-    	alert(<? echo $u[1] ?>);
+    if (charCode == 97 && <? echo $u[1] ?> >3 && <? echo $u[1] ?> % 5 != 3){
+    	<? mysql_query("UPDATE User SET Loc = Loc - 1 WHERE Username = $u[1]", $conn2);?>
     }
 };
 </script>
