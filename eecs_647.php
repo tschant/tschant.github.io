@@ -6,7 +6,7 @@ $conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 //echo 'Connected successfully';
 mysql_select_db('chefley') or die('Could not select database');
 
-$result = mysql_query("SELECT Image* FROM Location",$conn2);
+$result = mysql_query("SELECT * FROM Location",$conn2);
 
 $r = mysql_fetch_row($result);
 
