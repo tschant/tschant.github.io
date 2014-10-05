@@ -8,8 +8,8 @@ mysql_select_db('chefley') or die('Could not select database');
 
 $result = mysql_query("SELECT * FROM Location",$conn2);
 
-$r = mysql_fetch_row($result);
+while($r = mysql_fetch_row($result)){
 
 Echo $r[0]."<br>";
-
+}
 ?>
