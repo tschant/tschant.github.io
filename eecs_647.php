@@ -8,6 +8,6 @@ $result = mysql_query("SELECT * FROM CRUISE",$conn);
 
 while($r = mysql_fetch_row($result)){
 	print_r($r);
-	print_r( "<br/>");
+	print_r( "<br/>yo.");
 }
 ?>
