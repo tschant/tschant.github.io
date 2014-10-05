@@ -16,3 +16,8 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 }
 ?>
+<style>
+body{
+	margin:0;
+}
+</style>
