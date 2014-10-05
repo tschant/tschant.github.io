@@ -13,6 +13,6 @@ $elementsperrow = mysql_num_fields($result) - 3;
 $elementsperrow = sqrt($elementsperrow);
 $percentelement = 100/ $elementsperrow;
 for($i = 3; $i<mysql_num_fields ($result); $i++){
-Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."px; float: left; height: 200px;\">&nbsp;</div>";
+Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."px; float: left; height: ".$percentelement."px;\">&nbsp;</div>";
 }
 ?>
