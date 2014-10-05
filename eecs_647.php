@@ -12,6 +12,6 @@ $r = mysql_fetch_row($result);
 $elementsperrow = mysql_num_fields($result) - 3;
 $elementsperrow = sqrt($elementsperrow);
 for($i = 3; $i<mysql_num_fields ($result); $i++){
-Echo "<div style=\"background-color: ".$r[$i]."; width: ".$elementsperrow."px; float: left; height: 200px;\">&nbsp;</div>";
+Echo "<div style=\"background-color: ".$r[$i]."; width: ".100/$elementsperrow."px; float: left; height: 200px;\">&nbsp;</div>";
 }
 ?>
