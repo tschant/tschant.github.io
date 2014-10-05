@@ -23,7 +23,11 @@ Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; fl
 }
 		
 	}
-
+system("stty -icanon");
+echo "input# ";
+while ($c = fread(STDIN, 1)) {
+    echo "Read from STDIN: " . $c . "\ninput# ";
+}
 ?>
 
 
