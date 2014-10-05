@@ -9,6 +9,7 @@ mysql_select_db('chefley') or die('Could not select database');
 $result = mysql_query("SELECT * FROM Location",$conn2);
 
 $r = mysql_fetch_row($result);
+echo mysql_num_fields ($result);
 for($i = 3; i<=mysql_num_fields ($result ); $i++){
 Echo $r[i]."<br>";
 }
