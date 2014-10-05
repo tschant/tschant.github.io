@@ -1,4 +1,3 @@
-<html>
 <? 
 $conn = mysql_connect('mysql.eecs.ku.edu', 'tschante', 'monkey08')
 	or die('Could not connect: ' . mysql_error());
@@ -12,4 +11,3 @@ while($r = mysql_fetch_row($result)){
 	print_r( "<br/>");
 }
 ?>
-</html>
