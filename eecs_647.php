@@ -9,7 +9,7 @@ mysql_select_db('chefley') or die('Could not select database');
 $result = mysql_query("SELECT * FROM Location",$conn2);
 
 $r = mysql_fetch_row($result);
-$elementsperrow = $r - 3;
+$elementsperrow = mysql_num_fields($result) - 3;
 $elementsperrow = sqrt($elementsperrow);
 for($i = 3; $i<mysql_num_fields ($result); $i++){
 Echo "<div style=\"background-color: ".$r[$i]."; width: ".$elementsperrow."px; float: left; height: 200px;\">&nbsp;</div>";
