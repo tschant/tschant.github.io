@@ -23,14 +23,15 @@ Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; fl
 }
 		
 	}
-system("stty -icanon");
-echo "input# ";
-while ($c = fread(STDIN, 1)) {
-    echo "Read from STDIN: " . $c . "\ninput# ";
-}
 ?>
-
-
+<script>
+document.onkeypress = function(evt) {
+    evt = evt || window.event;
+    var charCode = evt.keyCode || evt.which;
+    var charStr = String.fromCharCode(charCode);
+    alert(charStr);
+};
+</script>
 <style>
 body{
 	margin:0;
