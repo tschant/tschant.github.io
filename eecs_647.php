@@ -9,7 +9,7 @@ mysql_select_db('chefley') or die('Could not select database');
 $result = mysql_query("SELECT * FROM Location",$conn2);
 
 $r = mysql_fetch_row($result);
-$r = $r[0];
-print_r($r);
+$tmp = $r[0];
+print_r($tmp);
 
 ?>
