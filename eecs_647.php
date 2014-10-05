@@ -1,4 +1,4 @@
-<? 
+<script> 
 $conn = mysql_connect('mysql.eecs.ku.edu', 'tschante', 'monkey08')
 	or die('Could not connect: ' . mysql_error());
 $conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
@@ -23,8 +23,8 @@ Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; fl
 }
 		
 	}
-?>
-<script>
+
+
 document.onkeypress = function(evt) {
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
