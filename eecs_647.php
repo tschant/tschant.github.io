@@ -26,7 +26,7 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 
 ?>
 <script>
-var numEnemies = <? echo $r[0];?>+1;
+var numEnemies = <? echo $r[0]+1;?>;
 var myLoc = <? echo $u[1]; ?>;
 var tmp;
 window.onload = function(){
