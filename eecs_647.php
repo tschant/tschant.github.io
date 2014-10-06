@@ -35,7 +35,7 @@ document.onkeypress = function(evt) {
     	document.getElementById("box".concat((myLoc-1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc--;
-    }else if (charCode == 115 && myLoc <23){
+    }else if (charCode == 115 && myLoc <23 && document.getElementById("box".concat((myLoc+5).toString())).style.backgroundColor == "green"){
     	document.getElementById("box".concat((myLoc+5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc+5;
