@@ -32,7 +32,7 @@ document.onload = function(){
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	for(var i = 0; i<divs.length() && numEnemies >0; i++){
-		if (divs[i].style.backgroundColor != "green" && Math.random()<.5){
+		if (divs[i].style.backgroundColor != "green" && Math.random()<.8){
 			divs[i].innerHTML = newhtml;
 			numEnemies--;
 		}
