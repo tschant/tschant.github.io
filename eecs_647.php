@@ -33,8 +33,8 @@ document.onkeypress = function(evt) {
     var charStr = String.fromCharCode(charCode);
     if (charCode == 97 && myLoc >3 && myLoc % 5 != 3){
     	document.getElementById("box".concat((myLoc-1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
-    	myLoc--;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
+    	myLoc--;
     }
 };
 </script>
