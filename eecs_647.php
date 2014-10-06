@@ -33,7 +33,6 @@ window.onload = function(){
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
-	alert(myLoc);
 	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 2){
 		rando = Math.floor(divs.length * Math.random());
 	}tmp = rando;
