@@ -35,6 +35,7 @@ window.onload = function(){
 	var rando = Math.floor(divs.length * Math.random());
 	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 2){
 		rando = Math.floor(divs.length * Math.random());
+		alert(rando);
 	}tmp = rando;
 	while(numEnemies > 0){
 		divs[rando].innerHTML = newhtml;
