@@ -32,9 +32,9 @@ window.onload = function(){
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = divs.length * Math.random();
+		alert("try again");
 	while(divs[Math.floor(rando)].style.backgroundColor == "green"){
 		rando = divs.length * Math.random();
-		alert("try again");
 	}
 	for(var i = 0; i<divs.length && numEnemies > 0; i++){
 		if(i == myLoc - 3){
