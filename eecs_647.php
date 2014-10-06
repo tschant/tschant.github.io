@@ -29,14 +29,10 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 var numEnemies = <? echo $r[0];?>;
 var myLoc = <? echo $u[1]; ?>;
 window.onload = function(){
-	alert("0");
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
-	alert("1");
-	for(var i = 0; i<divs.length() && numEnemies > 0; i++){
-		alert("2");
+	for(var i = 0; i<divs.length && numEnemies > 0; i++){
 		if (divs[i].style.backgroundColor != "green" && Math.random()<1){
-			alert("3");
 			divs[i].innerHTML = newhtml;
 			numEnemies--;
 		}
