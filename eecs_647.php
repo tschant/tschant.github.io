@@ -26,7 +26,18 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 
 ?>
 <script>
+var numEnemies = <? echo $r[0];?>;
 var myLoc = <? echo $u[1]; ?>;
+document.onload = function(){
+	var divs = document.getElementsByTagName("div");
+	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
+	for(var i = 0; i<divs.length() && numEnemies >0; i++){
+		if (divs[i].style.backgroundColor != "green" && Math.random()<.5){
+			divs[i].innerHTML = newhtml;
+			numEnemies--;
+		}
+	}
+}
 document.onkeypress = function(evt) {
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
@@ -53,5 +64,13 @@ document.onkeypress = function(evt) {
 <style>
 body{
 	margin:0;
+}
+.enemy{
+	background-color:red;
+	width:50%;
+	height:50%;
+	margin:auto;
+	position:relative;
+	top:25%;
 }
 </style>
