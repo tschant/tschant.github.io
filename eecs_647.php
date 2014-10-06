@@ -36,7 +36,7 @@ window.onload = function(){
 		rando = Math.floor(divs.length * Math.random());
 	}
 	while(numEnemies > 0){
-		if(rando = myLoc - 3){
+		if(rando == myLoc - 3){
 			rando = rando+2;
 		}
 		divs[rando].innerHTML = newhtml;
