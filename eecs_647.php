@@ -31,19 +31,19 @@ document.onkeypress = function(evt) {
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
-    if (charCode == 97 && myLoc >3 && myLoc % 5 != 3){
+    if (charCode == 97 && myLoc >3 && myLoc % 5 != 3 && document.getElementById("box".concat((myLoc-1).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc-1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc--;
-    }else if (charCode == 115 && myLoc <23 && document.getElementById("box".concat((myLoc+5).toString())).style.backgroundColor == "green"){
+    }else if (charCode == 115 && myLoc <23 && document.getElementById("box".concat((myLoc+5).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc+5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc+5;
-    }else if (charCode == 119 && myLoc >7){
+    }else if (charCode == 119 && myLoc >7 && document.getElementById("box".concat((myLoc-5).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc-5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc-5;
-    }else if (charCode == 100 && myLoc >2 && myLoc % 5 != 2){
+    }else if (charCode == 100 && myLoc >2 && myLoc % 5 != 2 && document.getElementById("box".concat((myLoc+1).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc+1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc++;
