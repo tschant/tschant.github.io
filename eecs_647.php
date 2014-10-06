@@ -19,11 +19,14 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 	if($u[1] == $i){
 		Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
 	}else{
-Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
-}
-		
+		Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 	}
+}
 
+function updateLocation(){
+mysql_query("UPDATE User SET Loc = Loc - 1 WHERE Username = $u[1]", $conn2);	
+}
+}
 ?>
 <script>
 document.onkeypress = function(evt) {
@@ -31,7 +34,7 @@ document.onkeypress = function(evt) {
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
     if (charCode == 97 && <? echo $u[1] ?> >3 && <? echo $u[1] ?> % 5 != 3){
-    	<? mysql_query("UPDATE User SET Loc = Loc - 1 WHERE Username = $u[1]", $conn2);?>
+    	alert(<? updateLocation();?>);
     }
 };
 </script>
