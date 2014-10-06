@@ -28,20 +28,21 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 <script>
 var numEnemies = <? echo $r[0];?>;
 var myLoc = <? echo $u[1]; ?>;
+var tmp;
 window.onload = function(){
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
 	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3){
 		rando = Math.floor(divs.length * Math.random());
-	}
+	}tmp = rando;
 	while(numEnemies > 0){
 		if(rando != myLoc - 3){
 		divs[rando].innerHTML = newhtml;
 		numEnemies--;
 		}
 		rando = divs.length * Math.random();
-		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3){
+		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == tmp){
 			rando = Math.floor(divs.length * Math.random());
 		}
 	}
