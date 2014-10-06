@@ -29,6 +29,7 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 var numEnemies = <? echo $r[0];?>;
 var myLoc = <? echo $u[1]; ?>;
 document.onload = function(){
+	alert("0");
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	alert("1");
