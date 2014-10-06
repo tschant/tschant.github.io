@@ -43,7 +43,7 @@ document.onkeypress = function(evt) {
     	document.getElementById("box".concat((myLoc-5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc-5;
-    }else if (charCode == 100 && myLoc >3 && myLoc % 5 != 2){
+    }else if (charCode == 100 && myLoc >2 && myLoc % 5 != 2){
     	document.getElementById("box".concat((myLoc+1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc++;
