@@ -26,9 +26,9 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 
 ?>
 <script>
+var myLoc = <? echo $u[1]; ?>;
 document.onkeypress = function(evt) {
     evt = evt || window.event;
-    var myLoc = <? echo $u[1]; ?>;
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
     if (charCode == 97 && myLoc >3 && myLoc % 5 != 3){
