@@ -26,7 +26,6 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 function updateLocation(){
 mysql_query("UPDATE User SET Loc = Loc - 1 WHERE Username = $u[1]", $conn2);	
 }
-}
 ?>
 <script>
 document.onkeypress = function(evt) {
