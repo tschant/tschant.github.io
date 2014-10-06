@@ -40,10 +40,9 @@ window.onload = function(){
 	while(numEnemies > 0){
 		divs[rando].innerHTML = newhtml;
 		numEnemies--;
-		rando = divs.length * Math.random();
+		rando = Math.floor(divs.length * Math.random());
 		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 2 || rando == tmp){
 			rando = Math.floor(divs.length * Math.random());
-			alert(numEnemies);
 		}
 	}
 };
