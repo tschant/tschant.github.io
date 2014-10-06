@@ -33,16 +33,15 @@ window.onload = function(){
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
-	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3){
+	alert(myLoc);
+	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 2){
 		rando = Math.floor(divs.length * Math.random());
 	}tmp = rando;
 	while(numEnemies > 0){
-		if(rando != myLoc - 3){
 		divs[rando].innerHTML = newhtml;
 		numEnemies--;
-		}
 		rando = divs.length * Math.random();
-		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == tmp){
+		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 2 || rando == tmp){
 			rando = Math.floor(divs.length * Math.random());
 		}
 	}
