@@ -36,11 +36,10 @@ window.onload = function(){
 		rando = Math.floor(divs.length * Math.random());
 	}
 	while(numEnemies > 0){
-		if(rando == myLoc - 3){
-			rando = rando+2;
-		}
+		if(rando != myLoc - 3){
 		divs[rando].innerHTML = newhtml;
 		numEnemies--;
+		}
 		rando = divs.length * Math.random();
 		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3){
 			rando = Math.floor(divs.length * Math.random());
