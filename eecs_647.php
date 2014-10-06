@@ -17,23 +17,23 @@ $percentelement = 100/ $elementsperrow;
 
 for($i = 3; $i<mysql_num_fields ($result); $i++){
 	if($u[1] == $i){
-		Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
+		Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
 	}else{
-		Echo "<div style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
+		Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 	}
 }
 
-function updateLocation(){
-mysql_query("UPDATE User SET Loc = Loc - 1 WHERE Username = $u[1]", $conn2);	
-}
+
 ?>
 <script>
 document.onkeypress = function(evt) {
     evt = evt || window.event;
+    var myLoc = <? echo $u[1]; ?>;
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
-    if (charCode == 97 && <? echo $u[1] ?> >3 && <? echo $u[1] ?> % 5 != 3){
-    	alert(<? updateLocation();?>);
+    if (charCode == 97 && myLoc >3 && myLoc % 5 != 3){
+    	document.getElementById("box".concat((myLoc-1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
+    	myLoc--;
     }
 };
 </script>
