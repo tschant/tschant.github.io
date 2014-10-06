@@ -32,12 +32,13 @@ document.onload = function(){
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	for(var i = 0; i<divs.length() && numEnemies >0; i++){
-		if (divs[i].style.backgroundColor != "green" && Math.random()<.8){
+		if (divs[i].style.backgroundColor != "green" && Math.random()<1){
 			divs[i].innerHTML = newhtml;
 			numEnemies--;
 		}
 	}
 };
+
 document.onkeypress = function(evt) {
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
