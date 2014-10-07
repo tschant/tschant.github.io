@@ -21,13 +21,13 @@ function func1($data){
 	return array("success"=>true, "message"=>"Updated user: ".$username);
 }
 
-function sign_in($user){
+/*function sign_in($user){
 	$file = file_get_contents('https://raw.github.com/tschant/tschant.github.io/master/eecs_647.php');
 	file_put_contents('eecs_647_2.php', $file);
 	include 'eecs_647_2.php';
 	$file2 = file_get_contents('https://raw.github.com/tschant/tschant.github.io/master/functions.php');
 	file_put_contents('functions.php', $file2);
 	include 'functions.php';
-}
+}*/
 
 ?>
