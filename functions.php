@@ -10,8 +10,7 @@ function func1($data){
 		or die('Could not connect: ' . mysql_error());
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
-	$query = "UPDATE User Set Loc = ".$data." WHERE Username LIKE 'BlakeHefley'";
-print_r($username);
+	$query = "UPDATE User Set Loc = ".$data." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
 }
 
