@@ -28,7 +28,7 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 var numEnemies = <? echo $r[0];?>;
 var myLoc = <? echo $u[1]; ?>;
 var tmp;
-window.onload = function(){
+$(document).ready(function(){
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
@@ -43,7 +43,7 @@ window.onload = function(){
 			rando = Math.floor(divs.length * Math.random());
 		}
 	}
-};
+});
 
 document.onkeypress = function(evt) {
     evt = evt || window.event;
