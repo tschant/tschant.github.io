@@ -12,6 +12,7 @@ function func1($data){
 	mysql_select_db('chefley') or die('Could not select database');
 	$query = "UPDATE User Set Loc = ".$data." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
+	return array("success"=>true, "message"=>"Updated user: ".$username);
 }
 
 ?>
