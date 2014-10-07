@@ -56,21 +56,39 @@ document.onkeypress = function(evt) {
     	$.ajax({
 	    url: 'functions.php',
 	    type: 'post',
-	    data: { "callFunc1": myLoc},
-	    success: function(response) { debugger; }
+	    data: { "callFunc1": myLoc}/*,
+	    success: function(response) { }*/
 	});
     }else if (charCode == 115 && myLoc <23 && document.getElementById("box".concat((myLoc+5).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc+5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc+5;
+    	$.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    data: { "callFunc1": myLoc}/*,
+	    success: function(response) { }*/
+	});
     }else if (charCode == 119 && myLoc >7 && document.getElementById("box".concat((myLoc-5).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc-5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc-5;
+    	$.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    data: { "callFunc1": myLoc}/*,
+	    success: function(response) { }*/
+	});
     }else if (charCode == 100 && myLoc >2 && myLoc % 5 != 2 && document.getElementById("box".concat((myLoc+1).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc+1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc++;
+    	$.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    data: { "callFunc1": myLoc}/*,
+	    success: function(response) { }*/
+	});
     }
 };
 </script>
