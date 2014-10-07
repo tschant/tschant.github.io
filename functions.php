@@ -1,4 +1,6 @@
 <?
+session_start();
+$username = $_SESSION["username"];
 if (isset($_POST['callFunc1'])) {
 	echo func1($_POST['callFunc1']);
 }
@@ -9,7 +11,8 @@ function func1($data){
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
 	$query = "UPDATE User Set Loc = ".$data." WHERE Username LIKE 'BlakeHefley'";
-	$user = mysql_query($query,$conn2);
+print_r($username);
+	mysql_query($query,$conn2);
 }
 
 ?>
