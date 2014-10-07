@@ -4,11 +4,11 @@ session_start();
 $username = $_SESSION["username"];
 if (isset($_POST['callFunc1'])) {
 	echo func1($_POST['callFunc1']);
-} else (isset($_POST['flag'])) {
+}/* else (isset($_POST['flag'])) {
 	if($_POST['flag'] == 'sign_in'){
 		echo sign_in($_POST['user']);
 	}
-}
+}*/
 
 function func1($data){
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
