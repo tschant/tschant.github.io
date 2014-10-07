@@ -69,7 +69,7 @@ document.onkeypress = function(evt) {
 	    url: 'eecs_647_2.php',
 	    type: 'post',
 	    data: { "callFunc1": myLoc},
-	    success: function(response) { alert(response); }
+	    success: function(response) { debugger; }
 	});
     }else if (charCode == 115 && myLoc <23 && document.getElementById("box".concat((myLoc+5).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc+5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
