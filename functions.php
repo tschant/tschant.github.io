@@ -51,7 +51,7 @@ function redraw(){
 function leaveR($Loc, $Locid){
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 	or die('Could not connect: ' . mysql_error());
-	echo "alert(\"Test1\");";
+	echo "<div style = 'width:400px; height:30px; background-color:red;'>&nbsp;</div>";
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
 	$username = "BlakeHefley"; //Remove once session is working
