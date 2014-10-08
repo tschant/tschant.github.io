@@ -93,6 +93,14 @@ document.onkeypress = function(evt) {
 	    data: { "callFunc1": myLoc}/*,
 	    success: function(response) { }*/
 	});
+    }else if (charCode == 100 && myLoc >2 && myLoc % 5 == 2){
+    	    myLoc = myLoc - 4;
+    	    $.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    data: { "callleaveR": myLoc}/*,
+	    success: function(response) { }*/
+	});
     }
 };
 </script>
