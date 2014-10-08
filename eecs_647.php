@@ -14,7 +14,7 @@ $user = mysql_query("SELECT * FROM User",$conn2);
 $u = mysql_fetch_row($user);
 
 $_SESSION["username"] = $u[0];
-$myLocid = $u[2];
+
 
 $elementsperrow = mysql_num_fields($result) - 3;
 $elementsperrow = sqrt($elementsperrow);
@@ -32,6 +32,7 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 <script>
 var numEnemies = <? echo $r[0];?>;
 var myLoc = <? echo $u[1]; ?>;
+var myLocid = <? echo $u[2]; ?>;
 var tmp;
 $(document).ready(function(){
 	var divs = document.getElementsByTagName("div");
