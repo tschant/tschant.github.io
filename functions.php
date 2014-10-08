@@ -29,7 +29,7 @@ function redraw(){
 	mysql_select_db('chefley') or die('Could not select database');
 	$username = "BlakeHefley"; //Remove once session is working
 	
-	$user = mysql_query("SELECT * FROM User where Username = ".$username,$conn2);
+	$user = mysql_query("SELECT * FROM User where Username LIKE '".$username."'",$conn2);
 	$u = mysql_fetch_row($user);
 	$result = mysql_query("SELECT * FROM Location where Locid = ".$u[2],$conn2);
 	$r = mysql_fetch_row($result);
