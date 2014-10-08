@@ -104,7 +104,7 @@ document.onkeypress = function(evt) {
 	    type: 'post',
 	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
 	    success: function(response) { 
-    	    alert(response);}
+    	    alert(response[0]);}
 	    });
     }
 };
