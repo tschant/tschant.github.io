@@ -14,6 +14,7 @@ $user = mysql_query("SELECT * FROM User",$conn2);
 $u = mysql_fetch_row($user);
 
 $_SESSION["username"] = $u[0];
+$myLocid = $u[2];
 
 $elementsperrow = mysql_num_fields($result) - 3;
 $elementsperrow = sqrt($elementsperrow);
@@ -95,10 +96,11 @@ document.onkeypress = function(evt) {
 	});
     }else if (charCode == 100 && myLoc >2 && myLoc % 5 == 2){
     	    myLoc = myLoc - 4;
+    	    myLocid += 0.1;
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
-	    data: { "callleaveR": myLoc}/*,
+	    data: { "callleaveR": myLoc, "magicsauce": myLocid}/*,
 	    success: function(response) { }*/
 	});
     }
