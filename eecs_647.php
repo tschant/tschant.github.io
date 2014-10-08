@@ -103,7 +103,7 @@ document.onkeypress = function(evt) {
 	    type: 'post',
 	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
 	    success: function(response) { 
-    	    alert("got here as well")}
+    	    alert("got here as well");}
 	    });
     }
 };
