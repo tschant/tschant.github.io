@@ -38,7 +38,7 @@ function redraw(){
 	$elementsperrow = mysql_num_fields($result) - 3;
 	$elementsperrow = sqrt($elementsperrow);
 	$percentelement = 100/ $elementsperrow;
-	echo "<script>document.getElementsByTagName('html')[0].innerHTML = '';</script>";
+	echo "<script>document.getElementsByTagName('body')[0].innerHTML = \"\"</script>";
 	for($i = 3; $i<mysql_num_fields ($result); $i++){
 		if($u[1] == $i){
 			Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
@@ -54,7 +54,7 @@ function leaveR($Loc, $Locid){
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
 	$username = "BlakeHefley"; //Remove once session is working
-	$query = "UPDATE User Set Loc = ".$data.", Locid = ".$Locid+.1." WHERE Username LIKE '".$username."'";
+	$query = "UPDATE User Set Loc = ".$data.", Locid = ".($Locid+0.1)." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
 	redraw();
 	return array("success"=>true, "message"=>"Updated user: ".$username);
