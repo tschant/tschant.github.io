@@ -106,7 +106,7 @@ document.onkeypress = function(evt) {
 	    success: function(response) { 
 	    for(var i = 0; i<response.length; i++){
     	    alert(response[i]);
-	    	
+	    }	
 	    }
 	    });
     }
