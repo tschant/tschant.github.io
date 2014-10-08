@@ -39,7 +39,6 @@ function redraw(){
 	$elementsperrow = mysql_num_fields($result) - 3;
 	$elementsperrow = sqrt($elementsperrow);
 	$percentelement = 100/ $elementsperrow;
-	echo "echo \"document.getElementsByTagName('body')[0].innerHTML = \\\"\\\";\";";
 	for($i = 3; $i<mysql_num_fields ($result); $i++){
 		if($u[1] == $i){
 			Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
@@ -52,7 +51,6 @@ function redraw(){
 function leaveR($Loc, $Locid){
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 	or die('Could not connect: ' . mysql_error());
-	echo "<div style = 'width:400px; height:30px; background-color:red;'>&nbsp;</div>";
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
 	$username = "BlakeHefley"; //Remove once session is working
