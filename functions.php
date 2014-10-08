@@ -4,7 +4,8 @@ session_start();
 $username = $_SESSION["username"];
 if (isset($_POST['callFunc1'])) {
 	echo func1($_POST['callFunc1']);
-}/* else (isset($_POST['flag'])) {
+}if (isset($_POST['callleaveR']) && isset($_POST['magicsauce'])) {
+	echo leaveR($_POST['callleaveR'],$_POST['magicsauce']);/* else (isset($_POST['flag'])) {
 	if($_POST['flag'] == 'sign_in'){
 		echo sign_in($_POST['user']);
 	}
@@ -39,11 +40,11 @@ function redraw(){
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
 	$username = "BlakeHefley"; //Remove once session is working
-	$result = mysql_query("SELECT * FROM Location",$conn2);
-	$r = mysql_fetch_row($result);
-	$user = mysql_query("SELECT * FROM User",$conn2);
+	
+	$user = mysql_query("SELECT * FROM User where Username = ".$username,$conn2);
 	$u = mysql_fetch_row($user);
-
+	$result = mysql_query("SELECT * FROM Location where Locid = ".$u[2],$conn2);
+	$r = mysql_fetch_row($result);
 	$_SESSION["username"] = $u[0];
 
 	$elementsperrow = mysql_num_fields($result) - 3;
