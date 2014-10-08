@@ -101,10 +101,10 @@ document.onkeypress = function(evt) {
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
-	    data: { "callleaveR": myLoc, "magicsauce": myLocid}/*,
-	    success: function(response) { }*/
+	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
+	    success: function(response) { 
+    	    alert("got here as well")}
 	    });
-    	    alert("got here too");
     }
 };
 </script>
