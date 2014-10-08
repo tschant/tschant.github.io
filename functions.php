@@ -56,6 +56,7 @@ function leaveR($Loc, $Locid){
 	$username = "BlakeHefley"; //Remove once session is working
 	$query = "UPDATE User Set Loc = ".$data.", Locid = ".($Locid+0.1)." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
+	echo "<script>alert(\"Test1\");</script>";
 	redraw();
 	return array("success"=>true, "message"=>"Updated user: ".$username);
 }
