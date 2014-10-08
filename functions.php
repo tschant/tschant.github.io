@@ -15,7 +15,7 @@ if (isset($_POST['callFunc1'])) {
 function func1($data){
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 		or die('Could not connect: ' . mysql_error());
-	//echo 'Connected successfully';
+	echo 'Connected successfully';
 	echo '<script>alert("test2");</script>';
 	mysql_select_db('chefley') or die('Could not select database');
 	$username = "BlakeHefley"; //Remove once session is working
