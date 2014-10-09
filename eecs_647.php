@@ -62,8 +62,8 @@ document.onkeypress = function(evt) {
     	$.ajax({
 	    url: 'functions.php',
 	    type: 'post',
-	    data: { "callFunc1": myLoc}/*,
-	    success: function(response) {alert(response["message"]); }*/
+	    data: { "callFunc1": myLoc},
+	    success: function(response) {alert(response); }
 	});
     }else if (charCode == 115 && myLoc <23 && document.getElementById("box".concat((myLoc+5).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc+5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
