@@ -65,7 +65,7 @@ function leaveR($Loc, $Locid){
 	$elementsperrow = mysql_num_fields($result) - 3;
 	$elementsperrow = sqrt($elementsperrow);
 	$percentelement = 100/ $elementsperrow;
-	echo $percentelement;
+	echo $elementsperrow;
 	for($i = 3; $i<mysql_num_fields ($result); $i++){
 		if($Loc == $i){
 			$code = $code."<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
