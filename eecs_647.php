@@ -119,6 +119,30 @@ document.onkeypress = function(evt) {
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
 	    }
 	    });
+    }else if (charCode == 115  && myLoc >22){
+    	    myLoc = myLoc + 20;
+    	    myLocid += 1;
+    	    $("div").remove();
+    	    $.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
+	    success: function(response) { 
+    	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
+	    }
+	    });
+    }else if (charCode == 119 && myLoc >2 && myLoc <8){
+    	    myLoc = myLoc + 20;
+    	    myLocid += 1;
+    	    $("div").remove();
+    	    $.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
+	    success: function(response) { 
+    	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
+	    }
+	    });
     }
 };
 </script>
