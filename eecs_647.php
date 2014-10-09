@@ -120,7 +120,7 @@ document.onkeypress = function(evt) {
 	    }
 	    });
     }else if (charCode == 115  && myLoc >22){
-    	    myLoc = myLoc + 20;
+    	    myLoc = myLoc - 20;
     	    myLocid += 1;
     	    $("div").remove();
     	    $.ajax({
@@ -133,7 +133,7 @@ document.onkeypress = function(evt) {
 	    });
     }else if (charCode == 119 && myLoc >2 && myLoc <8){
     	    myLoc = myLoc + 20;
-    	    myLocid += 1;
+    	    myLocid -= 1;
     	    $("div").remove();
     	    $.ajax({
 	    url: 'functions.php',
