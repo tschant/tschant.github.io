@@ -47,20 +47,20 @@ function redraw(){
 }
 
 function leaveR($Loc, $Locid){
-	/*$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
+	/$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 	or die('Could not connect: ' . mysql_error());
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
 	$username = "BlakeHefley"; //Remove once session is working
-	$query = "UPDATE User Set Loc = ".$data.", Locid = ".bcadd($Locid,0.1,1)." WHERE Username LIKE '".$username."'";
+	$query = "UPDATE User Set Loc = ".$Loc.", Locid = ".$Locid." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
 	
 	$user = mysql_query("SELECT * FROM User where Username LIKE '".$username."'",$conn2);
 	$u = mysql_fetch_row($user);
-	$result = mysql_query("SELECT * FROM Location where Locid = ".bcadd($u[2],0.1,1),$conn2);
-	$r = mysql_fetch_row($result);*/
+	$result = mysql_query("SELECT * FROM Location where Locid = ".$Locid,$conn2);
+	$r = mysql_fetch_row($result);
 	echo $Locid;
-	/*$code = "";
+	$code = "";
 	$_SESSION["username"] = $u[0];
 	$elementsperrow = mysql_num_fields($result) - 3;
 	$elementsperrow = sqrt($elementsperrow);
@@ -71,7 +71,7 @@ function leaveR($Loc, $Locid){
 		}else{
 			$code = $code."<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 		}
-	}*/
+	}
 	return "";
 }
 
