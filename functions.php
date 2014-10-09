@@ -72,7 +72,7 @@ function leaveR($Loc, $Locid){
 			$code = $code."<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 		}
 	}
-	return "";
+	return $code;
 }
 
 
