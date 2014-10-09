@@ -107,6 +107,18 @@ document.onkeypress = function(evt) {
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
 	    }
 	    });
+    }else if (charCode == 97 && myLoc >2 && myLoc % 5 == 3){
+    	    myLoc = myLoc + 4;
+    	    myLocid -= 0.1;
+    	    $("div").remove();
+    	    $.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
+	    success: function(response) { 
+    	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
+	    }
+	    });
     }
 };
 </script>
