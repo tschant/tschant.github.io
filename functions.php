@@ -57,7 +57,7 @@ function leaveR($Loc, $Locid){
 	$query = "UPDATE User Set Loc = ".$data.", Locid = ".($Locid+0.1)." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
 	redraw();
-	return array("success"=>true, "message"=>"Updated user: ".$username);
+	//return array("success"=>true, "message"=>"Updated user: ".$username);
 }
 
 
