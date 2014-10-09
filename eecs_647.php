@@ -98,13 +98,13 @@ document.onkeypress = function(evt) {
     }else if (charCode == 100 && myLoc >2 && myLoc % 5 == 2){
     	    myLoc = myLoc - 4;
     	    myLocid += 0.1;
-    	    document.getElementsByTagName('body')[0].innerHTML = "";
+    	    $("div").remove();
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
 	    success: function(response) { 
-    	    document.getElementsByTagName("body")[0].innerHTML = response;
+    	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
 	    }
 	    });
     }
