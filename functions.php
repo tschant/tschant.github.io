@@ -35,17 +35,17 @@ function redraw(){
 	$result = mysql_query("SELECT * FROM Location where Locid = ".$u[2],$conn2);
 	$r = mysql_fetch_row($result);
 	$_SESSION["username"] = $u[0];
-
+	$code = "";
 	$elementsperrow = mysql_num_fields($result) - 3;
 	$elementsperrow = sqrt($elementsperrow);
 	$percentelement = 100/ $elementsperrow;
 	for($i = 3; $i<mysql_num_fields ($result); $i++){
 		if($u[1] == $i){
-			Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
+			$code = $code."<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
 		}else{
-			Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
+			$code = $code."<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 		}
-	}
+	}return $code;
 }
 
 function leaveR($Loc, $Locid){
@@ -56,8 +56,7 @@ function leaveR($Loc, $Locid){
 	$username = "BlakeHefley"; //Remove once session is working
 	$query = "UPDATE User Set Loc = ".$data.", Locid = ".($Locid+0.1)." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
-	redraw();
-	//return array("success"=>true, "message"=>"Updated user: ".$username);
+	return redraw();;
 }
 
 
