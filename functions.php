@@ -59,7 +59,7 @@ function leaveR($Loc, $Locid){
 	$u = mysql_fetch_row($user);
 	$result = mysql_query("SELECT * FROM Location where Locid = ".$Locid,$conn2);
 	$r = mysql_fetch_row($result);
-	echo $Locid;
+	echo $r[1];
 	$code = "";
 	//$_SESSION["username"] = $u[0];
 	$elementsperrow = mysql_num_fields($result) - 3;
