@@ -8,11 +8,11 @@ mysql_select_db('chefley') or die('Could not select database');
 
 session_start();
 
-$result = mysql_query("SELECT * FROM Location",$conn2);
-$r = mysql_fetch_row($result);
+
 $user = mysql_query("SELECT * FROM User",$conn2);
 $u = mysql_fetch_row($user);
-
+$result = mysql_query("SELECT * FROM Location WHERE Location_id = ".$u[2],$conn2);
+$r = mysql_fetch_row($result);
 $_SESSION["username"] = $u[0];
 
 
