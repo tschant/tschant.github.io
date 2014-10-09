@@ -47,7 +47,7 @@ function redraw(){
 }
 
 function leaveR($Loc, $Locid){
-	/$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
+	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 	or die('Could not connect: ' . mysql_error());
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
@@ -60,11 +60,12 @@ function leaveR($Loc, $Locid){
 	$result = mysql_query("SELECT * FROM Location where Locid = ".$Locid,$conn2);
 	$r = mysql_fetch_row($result);
 	echo $Locid;
-	/*$code = "";
-	$_SESSION["username"] = $u[0];
+	$code = "";
+	//$_SESSION["username"] = $u[0];
 	$elementsperrow = mysql_num_fields($result) - 3;
 	$elementsperrow = sqrt($elementsperrow);
 	$percentelement = 100/ $elementsperrow;
+	echo $percentelement;
 	for($i = 3; $i<mysql_num_fields ($result); $i++){
 		if($u[1] == $i){
 			$code = $code."<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
