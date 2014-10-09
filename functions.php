@@ -57,7 +57,7 @@ function leaveR($Loc, $Locid){
 	
 	$user = mysql_query("SELECT * FROM User where Username LIKE '".$username."'",$conn2);
 	$u = mysql_fetch_row($user);
-	$result = mysql_query("SELECT * FROM Location where Locid = ".$Locid,$conn2);
+	$result = mysql_query("SELECT * FROM Location where Location_id = ".$Locid,$conn2);
 	$r = mysql_fetch_row($result);
 	echo $r[1];
 	$code = "";
