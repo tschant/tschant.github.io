@@ -21,7 +21,8 @@ function func1($data){
 	$username = "BlakeHefley"; //Remove once session is working
 	$query = "UPDATE User Set Loc = ".$data." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
-	return array("success"=>true, "message"=>"Updated user: ".$username);
+	return "hello";
+	//return array("success"=>true, "message"=>"Updated user: ".$username);
 }
 function redraw(){
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
