@@ -19,8 +19,7 @@ function func1($data){
 	$username = "BlakeHefley"; //Remove once session is working
 	$query = "UPDATE User Set Loc = ".$data." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
-	return "";
-	//return array("success"=>true, "message"=>"Updated user: ".$username);
+	return array("success"=>true, "message"=>"Updated user: ".$username);
 }
 function redraw(){
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
@@ -48,7 +47,7 @@ function redraw(){
 }
 
 function leaveR($Loc, $Locid){
-	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
+	/*$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 	or die('Could not connect: ' . mysql_error());
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
@@ -59,9 +58,9 @@ function leaveR($Loc, $Locid){
 	$user = mysql_query("SELECT * FROM User where Username LIKE '".$username."'",$conn2);
 	$u = mysql_fetch_row($user);
 	$result = mysql_query("SELECT * FROM Location where Locid = ".bcadd($u[2],0.1,1),$conn2);
-	$r = mysql_fetch_row($result);
+	$r = mysql_fetch_row($result);*/
 	echo $Locid;
-	$code = "";
+	/*$code = "";
 	$_SESSION["username"] = $u[0];
 	$elementsperrow = mysql_num_fields($result) - 3;
 	$elementsperrow = sqrt($elementsperrow);
@@ -72,7 +71,7 @@ function leaveR($Loc, $Locid){
 		}else{
 			$code = $code."<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 		}
-	}
+	}*/
 	return "";
 }
 
