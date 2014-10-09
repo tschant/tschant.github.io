@@ -56,17 +56,12 @@ function leaveR($Loc, $Locid){
 	$query = "UPDATE User Set Loc = ".$data.", Locid = ".($Locid+0.1)." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
 	
-	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
-	or die('Could not connect: ' . mysql_error());
-	//echo 'Connected successfully';
-	mysql_select_db('chefley') or die('Could not select database');
-	$username = "BlakeHefley"; //Remove once session is working
-	
 	$user = mysql_query("SELECT * FROM User where Username LIKE '".$username."'",$conn2);
 	$u = mysql_fetch_row($user);
-	$result = mysql_query("SELECT * FROM Location where Locid = ".$u[2],$conn2);
+	$result = mysql_query("SELECT * FROM Location where Locid = ".($u[2]+.0.1),$conn2);
 	$r = mysql_fetch_row($result);
-	echo $u[2];
+	echo ($u[2]+0.1);
+	$code = "";
 	$_SESSION["username"] = $u[0];
 	$elementsperrow = mysql_num_fields($result) - 3;
 	$elementsperrow = sqrt($elementsperrow);
