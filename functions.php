@@ -60,7 +60,7 @@ function leaveR($Loc, $Locid){
 	$u = mysql_fetch_row($user);
 	$result = mysql_query("SELECT * FROM Location where Locid = ".bcadd($u[2],0.1,1),$conn2);
 	$r = mysql_fetch_row($result);
-	echo bcadd($u[2],0.1,1);
+	echo $Locid;
 	$code = "";
 	$_SESSION["username"] = $u[0];
 	$elementsperrow = mysql_num_fields($result) - 3;
@@ -73,7 +73,7 @@ function leaveR($Loc, $Locid){
 			$code = $code."<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 		}
 	}
-	return $code;
+	return "";
 }
 
 
