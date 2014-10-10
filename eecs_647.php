@@ -40,7 +40,7 @@ $(document).ready(function(){
 	var rando = Math.floor(divs.length * Math.random());
 	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 ){
 		rando = Math.floor(divs.length * Math.random());
-	}tmp[]
+	}
 	while(numEnemies > 0){
 		alert(rando);
 		divs[rando].innerHTML = newhtml;
