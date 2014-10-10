@@ -42,6 +42,7 @@ $(document).ready(function(){
 		rando = Math.floor(divs.length * Math.random());
 	}tmp = rando;
 	while(numEnemies > 0){
+		alert(rando);
 		divs[rando].innerHTML = newhtml;
 		numEnemies--;
 		rando = Math.floor(divs.length * Math.random());
