@@ -33,7 +33,6 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 var numEnemies = <? echo $r[0];?>;
 var myLoc = <? echo $u[1]; ?>;
 var myLocid = <? echo $u[2]; ?>;
-var tmp;
 $(document).ready(function(){
 	var divs = document.getElementsByClassName("box");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
@@ -42,7 +41,6 @@ $(document).ready(function(){
 		rando = Math.floor(divs.length * Math.random());
 	}
 	while(numEnemies > 0){
-		alert(rando);
 		divs[rando].innerHTML = newhtml;
 		numEnemies--;
 		rando = Math.floor(divs.length * Math.random());
