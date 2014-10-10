@@ -35,7 +35,7 @@ var myLoc = <? echo $u[1]; ?>;
 var myLocid = <? echo $u[2]; ?>;
 var tmp;
 $(document).ready(function(){
-	var divs = document.getElementsByClassName("box);
+	var divs = document.getElementsByClassName("box");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
 	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 ){
