@@ -22,9 +22,9 @@ $percentelement = 100/ $elementsperrow;
 
 for($i = 3; $i<mysql_num_fields ($result); $i++){
 	if($u[1] == $i){
-		Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; border-top: 5px solid red; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
+		Echo "<div id = \"box box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; border-top: 5px solid red; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
 	}else{
-		Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
+		Echo "<div id = \"box box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 	}
 }
 
@@ -35,18 +35,18 @@ var myLoc = <? echo $u[1]; ?>;
 var myLocid = <? echo $u[2]; ?>;
 var tmp;
 $(document).ready(function(){
-	var divs = document.getElementsByTagName("div");
+	var divs = document.getElementsByClassName("box);
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
-	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 1){
+	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 ){
 		rando = Math.floor(divs.length * Math.random());
-	}tmp = rando;
+	}tmp[]
 	while(numEnemies > 0){
 		alert(rando);
 		divs[rando].innerHTML = newhtml;
 		numEnemies--;
 		rando = Math.floor(divs.length * Math.random());
-		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 1 || rando == tmp){
+		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 ){
 			rando = Math.floor(divs.length * Math.random());
 		}
 	}
