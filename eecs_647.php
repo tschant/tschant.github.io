@@ -38,7 +38,7 @@ $(document).ready(function(){
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
-	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 2){
+	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 1 || rando == myLoc - 2){
 		rando = Math.floor(divs.length * Math.random());
 	}tmp = rando;
 	while(numEnemies > 0){
