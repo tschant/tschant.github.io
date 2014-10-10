@@ -50,8 +50,9 @@ $(document).ready(function(){
 		}
 	}
 });
-
+var checker = true;
 document.onkeypress = function(evt) {
+if(checker){
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
@@ -106,6 +107,7 @@ document.onkeypress = function(evt) {
     }else if (charCode == 100 && myLoc >2 && myLoc % 5 == 2){
     	    myLoc = myLoc - 4;
     	    myLocid += 0.1;
+    	    checker = false;
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
@@ -116,12 +118,14 @@ document.onkeypress = function(evt) {
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderRight = "5px solid red";
+    	checker = true;
 	    }
 	    });
 	    
     }else if (charCode == 97 && myLoc >2 && myLoc % 5 == 3){
     	    myLoc = myLoc + 4;
     	    myLocid -= 0.1;
+    	    checker = false;
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
@@ -132,12 +136,14 @@ document.onkeypress = function(evt) {
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderLeft = "5px solid red";
+    	checker = true;
 	    }
 	    });
 	    
     }else if (charCode == 115  && myLoc >22){
     	    myLoc = myLoc - 20;
     	    myLocid += 1;
+    	    checker = false;
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
@@ -147,12 +153,14 @@ document.onkeypress = function(evt) {
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderBottom = "5px solid red";
+    	checker = true;
 	    }
 	    });
 	    
     }else if (charCode == 119 && myLoc >2 && myLoc <8){
     	    myLoc = myLoc + 20;
     	    myLocid -= 1;
+    	    checker = false;
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
@@ -162,10 +170,12 @@ document.onkeypress = function(evt) {
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderTop = "5px solid red";
+    	checker = true;
 	    }
 	    });
 	    
     }
+}
 };
 </script>
 <style>
