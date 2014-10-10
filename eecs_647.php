@@ -106,12 +106,13 @@ document.onkeypress = function(evt) {
     }else if (charCode == 100 && myLoc >2 && myLoc % 5 == 2){
     	    myLoc = myLoc - 4;
     	    myLocid += 0.1;
-    	    $("div").remove();
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
 	    success: function(response) { 
+	    
+    	    $("div").remove();
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderRight = "5px solid red";
@@ -121,12 +122,13 @@ document.onkeypress = function(evt) {
     }else if (charCode == 97 && myLoc >2 && myLoc % 5 == 3){
     	    myLoc = myLoc + 4;
     	    myLocid -= 0.1;
-    	    $("div").remove();
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
 	    success: function(response) { 
+	    
+    	    $("div").remove();
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderLeft = "5px solid red";
@@ -136,12 +138,12 @@ document.onkeypress = function(evt) {
     }else if (charCode == 115  && myLoc >22){
     	    myLoc = myLoc - 20;
     	    myLocid += 1;
-    	    $("div").remove();
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
 	    success: function(response) { 
+    	    $("div").remove();
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderBottom = "5px solid red";
@@ -151,12 +153,12 @@ document.onkeypress = function(evt) {
     }else if (charCode == 119 && myLoc >2 && myLoc <8){
     	    myLoc = myLoc + 20;
     	    myLocid -= 1;
-    	    $("div").remove();
     	    $.ajax({
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "callleaveR": myLoc, "magicsauce": myLocid},
 	    success: function(response) { 
+    	    $("div").remove();
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderTop = "5px solid red";
