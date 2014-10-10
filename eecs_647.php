@@ -71,6 +71,8 @@ document.onkeypress = function(evt) {
     	document.getElementById("box".concat((myLoc+5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc+5;
+    	document.getElementById("me").style.border = "0px solid red";
+    	document.getElementById("me").style.borderBottom = "5px solid red";
     	$.ajax({
 	    url: 'functions.php',
 	    type: 'post',
@@ -81,6 +83,8 @@ document.onkeypress = function(evt) {
     	document.getElementById("box".concat((myLoc-5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc-5;
+    	document.getElementById("me").style.border = "0px solid red";
+    	document.getElementById("me").style.borderTop = "5px solid red";
     	$.ajax({
 	    url: 'functions.php',
 	    type: 'post',
@@ -91,6 +95,8 @@ document.onkeypress = function(evt) {
     	document.getElementById("box".concat((myLoc+1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc++;
+    	document.getElementById("me").style.border = "0px solid red";
+    	document.getElementById("me").style.borderRight = "5px solid red";
     	$.ajax({
 	    url: 'functions.php',
 	    type: 'post',
