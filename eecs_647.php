@@ -38,7 +38,7 @@ $(document).ready(function(){
 	var divs = document.getElementsByTagName("div");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
-	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 2){
+	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 1){
 		rando = Math.floor(divs.length * Math.random());
 	}tmp = rando;
 	while(numEnemies > 0){
@@ -46,7 +46,7 @@ $(document).ready(function(){
 		divs[rando].innerHTML = newhtml;
 		numEnemies--;
 		rando = Math.floor(divs.length * Math.random());
-		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 2 || rando == tmp){
+		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 || rando == myLoc - 1 || rando == tmp){
 			rando = Math.floor(divs.length * Math.random());
 		}
 	}
