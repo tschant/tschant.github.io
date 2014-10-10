@@ -22,7 +22,7 @@ $percentelement = 100/ $elementsperrow;
 
 for($i = 3; $i<mysql_num_fields ($result); $i++){
 	if($u[1] == $i){
-		Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
+		Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; border-top: 5px solid red; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
 	}else{
 		Echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 	}
@@ -58,6 +58,8 @@ document.onkeypress = function(evt) {
     if (charCode == 97 && myLoc >3 && myLoc % 5 != 3 && document.getElementById("box".concat((myLoc-1).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc-1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
+    	document.getElementById("me").style.border = "0px solid red";
+    	document.getElementById("me").style.borderLeft = "5px solid red";
     	myLoc--;
     	$.ajax({
 	    url: 'functions.php',
