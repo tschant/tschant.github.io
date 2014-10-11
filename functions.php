@@ -47,14 +47,15 @@ function leaveR($Loc, $Locid){
 	
 	$user = mysql_query("SELECT * FROM User where Username LIKE '".$username."'",$conn2);
 	$u = mysql_fetch_row($user);
-	$result = mysql_query("SELECT * FROM Location where Location_id = ".$Locid,$conn2);
+	$result = mysql_query("SELECT * FROM Location,ImageSet where ImageSet.ImageSetId = Location.ImageSetId AND Location_id = ".$Locid,$conn2);
 	$r = mysql_fetch_row($result);
+	$offset = 5;
 	$code = "";
 	//$_SESSION["username"] = $u[0];
-	$elementsperrow = mysql_num_fields($result) - 3;
+	$elementsperrow = mysql_num_fields($result) - $offset;
 	$elementsperrow = sqrt($elementsperrow);
 	$percentelement = 100/ $elementsperrow;
-	for($i = 3; $i<mysql_num_fields ($result); $i++){
+	for($i = $offset; $i<mysql_num_fields ($result); $i++){
 		if($Loc == $i){
 			$code = $code."<div class=\"box\" id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
 		}else{
