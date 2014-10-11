@@ -33,6 +33,22 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 var numEnemies = <? echo $r[0];?>;
 var myLoc = <? echo $u[1]; ?>;
 var myLocid = <? echo $u[2]; ?>;
+function drawEnemies(){
+	var divs = document.getElementsByClassName("box");
+	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
+	var rando = Math.floor(divs.length * Math.random());
+	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 ){
+		rando = Math.floor(divs.length * Math.random());
+	}
+	while(numEnemies > 0){
+		divs[rando].innerHTML = newhtml;
+		numEnemies--;
+		rando = Math.floor(divs.length * Math.random());
+		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - 3 ){
+			rando = Math.floor(divs.length * Math.random());
+		}
+	}
+}
 $(document).ready(function(){
 	var divs = document.getElementsByClassName("box");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
@@ -118,6 +134,12 @@ if(checker){
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderRight = "5px solid red";
     	checker = true;
+    	numEnemies = <? $user = mysql_query("SELECT * FROM User",$conn2);
+$u = mysql_fetch_row($user);
+$result = mysql_query("SELECT * FROM Location WHERE Location_id = ".$u[2],$conn2);
+$r = mysql_fetch_row($result);
+echo $r[0]; ?>;
+    	drawEnemies();
 	    }
 	    });
 	    
