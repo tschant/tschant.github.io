@@ -147,6 +147,14 @@ if(checker){
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderLeft = "5px solid red";
     	checker = true;
+    	    	$.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    data: { "getEnemies": myLocid},
+	    success: function(response) { 
+	    	drawEnemies(response);
+	    }
+	});
 	    }
 	    });
 	    
@@ -164,6 +172,14 @@ if(checker){
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderBottom = "5px solid red";
     	checker = true;
+    	    	$.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    data: { "getEnemies": myLocid},
+	    success: function(response) { 
+	    	drawEnemies(response);
+	    }
+	});
 	    }
 	    });
 	    
@@ -181,6 +197,14 @@ if(checker){
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderTop = "5px solid red";
     	checker = true;
+    	    	$.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    data: { "getEnemies": myLocid},
+	    success: function(response) { 
+	    	drawEnemies(response);
+	    }
+	});
 	    }
 	    });
 	    
