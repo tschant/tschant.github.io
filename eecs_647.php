@@ -28,7 +28,7 @@ for($i = $offset; $i<mysql_num_fields ($result); $i++){
 		Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 	}
 }if($u[2] == 0.2){
-	Echo "<div class = \"Sanctuary\">&nbsp;</div>";
+	Echo "<div class = \"Sanctuary\">Sanctuary</div>";
 }
 
 ?>
@@ -259,7 +259,6 @@ body{
 	position:absolute;
 	top:33%;
 	left:33%;
-	content: "Sanctuary";
 	font-size:200px;
 	color:white;
 }
