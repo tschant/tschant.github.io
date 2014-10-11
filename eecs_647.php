@@ -108,7 +108,7 @@ if(checker){
 	    data: { "callFunc1": myLoc}/*,
 	    success: function(response) { }*/
 	});
-    }else if (charCode == 119 && myLoc >size-offset && document.getElementById("box".concat((myLoc-size).toString())).style.backgroundColor != "green"){
+    }else if (charCode == 119 && myLoc >size+offset-1 && document.getElementById("box".concat((myLoc-size).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc-size).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc-size;
