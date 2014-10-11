@@ -51,7 +51,7 @@ function drawEnemies(numEnemies){
 }
 
 function moveEnemies(){
-	var parents = $(".enemy")
+	var parents = $(".enemy");
 	for (var i = 0; i<parents.length; i++){
 		alert(parents[i].parent().attr('id'));
 	}
