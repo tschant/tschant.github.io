@@ -65,7 +65,7 @@ checker = false;
 			var neg = -1;
 		}var parentnum = parseInt(parentid.substr(3));
 		var newparentnum = parentnum + (amount * neg);
-		if((rando == 0 && parentnum % 5 == 2) || (rando == 1 && parentnum % 5 == 3) || (rando == 2 && parentnum>22)|| (rando == 3 && parentnum<8)|| (document.getElementById("box".concat(newparentnum.toString())).style.backgroundColor == "green") || ((document.getElementById("box".concat(newparentnum.toString())).innerHTML.length != 0) || (document.getElementById("box".concat(newparentnum.toString())).innerHTML != "&nbsp;"))){}
+		if((rando == 0 && parentnum % 5 == 2) || (rando == 1 && parentnum % 5 == 3) || (rando == 2 && parentnum>22)|| (rando == 3 && parentnum<8)|| (document.getElementById("box".concat(newparentnum.toString())).style.backgroundColor == "green") || ((document.getElementById("box".concat(newparentnum.toString())).innerHTML.length != 0) && (document.getElementById("box".concat(newparentnum.toString())).innerHTML != "&nbsp;"))){}
 		else{
 			document.getElementById("box".concat(newparentnum.toString())).innerHTML = document.getElementById("box".concat(parentnum.toString())).innerHTML;
 			document.getElementById("box".concat(parentnum.toString())).innerHTML= "&nbsp;";
