@@ -21,29 +21,22 @@ function func1($data){
 	mysql_query($query,$conn2);
 	return array("success"=>true, "message"=>"Updated user: ".$username);
 }
-function redraw(){
+
+function getEnemies($Loc){
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 	or die('Could not connect: ' . mysql_error());
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
 	$username = "BlakeHefley"; //Remove once session is working
+	$query = "UPDATE User Set Loc = ".$Loc.", Locid = ".$Locid." WHERE Username LIKE '".$username."'";
+	mysql_query($query,$conn2);
 	
 	$user = mysql_query("SELECT * FROM User where Username LIKE '".$username."'",$conn2);
 	$u = mysql_fetch_row($user);
-	$result = mysql_query("SELECT * FROM Location where Locid = ".$u[2],$conn2);
+	$result = mysql_query("SELECT * FROM Location where Location_id = ".$Locid,$conn2);
 	$r = mysql_fetch_row($result);
-	$_SESSION["username"] = $u[0];
-	$code = "";
-	$elementsperrow = mysql_num_fields($result) - 3;
-	$elementsperrow = sqrt($elementsperrow);
-	$percentelement = 100/ $elementsperrow;
-	for($i = 3; $i<mysql_num_fields ($result); $i++){
-		if($u[1] == $i){
-			echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
-		}else{
-			echo "<div id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
-		}
-	}
+	
+	return $r[0];
 }
 
 function leaveR($Loc, $Locid){
