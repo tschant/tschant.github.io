@@ -55,7 +55,7 @@ function moveEnemies(){
 	alert (parents[0]);
 }
 window.onload = drawEnemies(maxEnemies);
-var mytimer = setInterval(function(){moveEnemies()}, 1000);
+var mytimer = setInterval(function(){alert("trying");moveEnemies();}, 1000);
 var checker = true;
 document.onkeypress = function(evt) {
 if(checker){
