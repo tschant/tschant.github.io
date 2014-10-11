@@ -211,7 +211,7 @@ if(checker){
 	    }
 	    });
 	    
-    }else if (charCode == 119 && myLoc >offset-1 && myLoc < size-offset+1){
+    }else if (charCode == 119 && myLoc > offset-1 && myLoc < size+offset){
     	    myLoc = myLoc + size*(size-1);
     	    myLocid -= 1;
     	    checker = false;
