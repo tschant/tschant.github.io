@@ -126,7 +126,7 @@ if(checker){
 	    type: 'post',
 	    data: { "getEnemies": myLocid},
 	    success: function(response) { 
-	    	drawEnemies(response);
+	    	alert(response);
 	    }
 	});
     	drawEnemies();
