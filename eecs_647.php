@@ -64,6 +64,8 @@ function moveEnemies(){
 			var neg = -1;
 		}var parentnum = parseInt(parentid.substr(3));
 		alert(parentnum);
+		parentnum = parentnum + (amount * neg);
+		alert(parentnum);
 	}
 }
 window.onload = drawEnemies(maxEnemies);
