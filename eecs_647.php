@@ -50,8 +50,12 @@ function drawEnemies(numEnemies){
 	}
 }
 
+function moveEnemies(){
+	var parents = $("enemy").parents().attr('class');
+	alert (parents[0]);
+}
 window.onload = drawEnemies(maxEnemies);
-
+var mytimer = setInterval(function(){moveEnemies()}, 1000);
 var checker = true;
 document.onkeypress = function(evt) {
 if(checker){
@@ -120,13 +124,13 @@ if(checker){
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderRight = "5px solid red";
-    	checker = true;
     	$.ajax({
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "getEnemies": myLocid},
 	    success: function(response) { 
 	    	drawEnemies(response);
+	    	checker = true;
 	    }
 	});
 	    }
@@ -146,15 +150,17 @@ if(checker){
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderLeft = "5px solid red";
-    	checker = true;
+
     	    	$.ajax({
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "getEnemies": myLocid},
 	    success: function(response) { 
 	    	drawEnemies(response);
+	    	checker = true;
 	    }
 	});
+	    	
 	    }
 	    });
 	    
@@ -171,13 +177,13 @@ if(checker){
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderBottom = "5px solid red";
-    	checker = true;
     	    	$.ajax({
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "getEnemies": myLocid},
 	    success: function(response) { 
 	    	drawEnemies(response);
+	      	checker = true;
 	    }
 	});
 	    }
@@ -196,13 +202,13 @@ if(checker){
     	    document.getElementsByTagName("body")[0].innerHTML = response + document.getElementsByTagName("body")[0].innerHTML;
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderTop = "5px solid red";
-    	checker = true;
     	    	$.ajax({
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "getEnemies": myLocid},
 	    success: function(response) { 
-	    	drawEnemies(response);
+	    	drawEnemies(response); 
+	    	checker = true;
 	    }
 	});
 	    }
