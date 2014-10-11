@@ -34,8 +34,8 @@ for($i = $offset; $i<mysql_num_fields ($result); $i++){
 var maxEnemies = <? echo $r[0];?>;
 var myLoc = <? echo $u[1]; ?>;
 var myLocid = <? echo $u[2]; ?>;
-var offset = <? echo $offset; ?>
-var size = <? echo $elementsperrow;?>
+var offset = <? echo $offset; ?>;
+var size = <? echo $elementsperrow;?>;
 function drawEnemies(numEnemies){
 	var divs = document.getElementsByClassName("box");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
