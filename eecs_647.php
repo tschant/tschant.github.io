@@ -121,7 +121,7 @@ if(checker){
     	document.getElementById("me").style.border = "0px solid red";
     	document.getElementById("me").style.borderRight = "5px solid red";
     	checker = true;
-    	.ajax({
+    	$.ajax({
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "getEnemies": myLocid},
