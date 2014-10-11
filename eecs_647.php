@@ -126,10 +126,9 @@ if(checker){
 	    type: 'post',
 	    data: { "getEnemies": myLocid},
 	    success: function(response) { 
-	    	alert(response);
+	    	drawEnemies(response);
 	    }
 	});
-    	drawEnemies();
 	    }
 	    });
 	    
