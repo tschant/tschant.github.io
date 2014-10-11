@@ -30,10 +30,10 @@ for($i = 3; $i<mysql_num_fields ($result); $i++){
 
 ?>
 <script>
-var numEnemies = <? echo $r[0];?>;
+var maxEnemies = <? echo $r[0];?>;
 var myLoc = <? echo $u[1]; ?>;
 var myLocid = <? echo $u[2]; ?>;
-function drawEnemies(){
+function drawEnemies(numEnemies){
 	var divs = document.getElementsByClassName("box");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
@@ -50,7 +50,7 @@ function drawEnemies(){
 	}
 }
 
-$(document).ready(drawEnemies());
+$(document).ready(drawEnemies(maxEnemies));
 
 var checker = true;
 document.onkeypress = function(evt) {
@@ -124,8 +124,10 @@ if(checker){
     	.ajax({
 	    url: 'functions.php',
 	    type: 'post',
-	    data: { "callgetEnemies": myLocid},
-	    success: function(response) { }
+	    data: { "getEnemies": myLocid},
+	    success: function(response) { 
+	    	drawEnemies(response);
+	    }
 	});
     	drawEnemies();
 	    }
