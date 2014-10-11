@@ -62,7 +62,7 @@ function moveEnemies(){
 			var neg = 1;
 		}else{
 			var neg = -1;
-		}var parentnum = parseInt(parentid.match(/\d/g));
+		}var parentnum = parseInt(parentid.substr(3));
 		alert(parentnum);
 	}
 }
