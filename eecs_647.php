@@ -68,7 +68,7 @@ checker = false;
 			var neg = -1;
 		}var parentnum = parseInt(parentid.substr(3));
 		var newparentnum = parentnum + (amount * neg);
-		if((rando == 0 && parentnum % 5 == offset-1) || (rando == 1 && parentnum % 5 == offset) || (rando == 2 && parentnum>size*size - offset)|| (rando == 3 && parentnum<size-offset+1)|| (document.getElementById("box".concat(newparentnum.toString())).style.backgroundColor == "green") || ((document.getElementById("box".concat(newparentnum.toString())).innerHTML.length != 0) && (document.getElementById("box".concat(newparentnum.toString())).innerHTML != "&nbsp;"))){}
+		if((rando == 0 && parentnum % size == offset-1) || (rando == 1 && parentnum % size == offset) || (rando == 2 && parentnum>size*size - offset)|| (rando == 3 && parentnum<size-offset+1)|| (document.getElementById("box".concat(newparentnum.toString())).style.backgroundColor == "green") || ((document.getElementById("box".concat(newparentnum.toString())).innerHTML.length != 0) && (document.getElementById("box".concat(newparentnum.toString())).innerHTML != "&nbsp;"))){}
 		else{
 			document.getElementById("box".concat(newparentnum.toString())).innerHTML = document.getElementById("box".concat(parentnum.toString())).innerHTML;
 			document.getElementById("box".concat(parentnum.toString())).innerHTML= "&nbsp;";
@@ -84,7 +84,7 @@ if(checker){
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
-    if (charCode == 97 && myLoc >3 && myLoc % size != offset && document.getElementById("box".concat((myLoc-1).toString())).style.backgroundColor != "green"){
+    if (charCode == 97 && myLoc >offset && myLoc % size != offset && document.getElementById("box".concat((myLoc-1).toString())).style.backgroundColor != "green"){
     	document.getElementById("box".concat((myLoc-1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	document.getElementById("me").style.border = "0px solid red";
@@ -96,8 +96,8 @@ if(checker){
 	    data: { "callFunc1": myLoc}/*,
 	    success: function(response) {alert(response); }*/
 	});
-    }else if (charCode == 115 && myLoc <size*size-offset && document.getElementById("box".concat((myLoc+5).toString())).style.backgroundColor != "green"){
-    	document.getElementById("box".concat((myLoc+5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
+    }else if (charCode == 115 && myLoc <size*size-offset && document.getElementById("box".concat((myLoc+size).toString())).style.backgroundColor != "green"){
+    	document.getElementById("box".concat((myLoc+size).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc+size;
     	document.getElementById("me").style.border = "0px solid red";
@@ -108,8 +108,8 @@ if(checker){
 	    data: { "callFunc1": myLoc}/*,
 	    success: function(response) { }*/
 	});
-    }else if (charCode == 119 && myLoc >size-offset && document.getElementById("box".concat((myLoc-5).toString())).style.backgroundColor != "green"){
-    	document.getElementById("box".concat((myLoc-5).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
+    }else if (charCode == 119 && myLoc >size-offset && document.getElementById("box".concat((myLoc-size).toString())).style.backgroundColor != "green"){
+    	document.getElementById("box".concat((myLoc-size).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc-size;
     	document.getElementById("me").style.border = "0px solid red";
