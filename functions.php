@@ -61,6 +61,8 @@ function leaveR($Loc, $Locid){
 		}else{
 			$code = $code."<div class=\"box\" id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 		}
+	}if($u[2] == 0.2){
+		$code = $code."<div class=\"sanctuary\">Sanctuary</div>";
 	}
 	return $code;
 }
