@@ -22,9 +22,9 @@ $percentelement = 100/ $elementsperrow;
 
 for($i = 3; $i<mysql_num_fields ($result); $i++){
 	if($u[1] == $i){
-		Echo "<div class = \"box\" id = \" box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; border-top: 5px solid red; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
+		Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; border-top: 5px solid red; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
 	}else{
-		Echo "<div class = \"box\" id = \" box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
+		Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 	}
 }
 
