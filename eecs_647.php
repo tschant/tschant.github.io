@@ -49,7 +49,8 @@ function drawEnemies(){
 		}
 	}
 }
-$(document).ready(function(){
+
+$(document).ready(/*function(){
 	var divs = document.getElementsByClassName("box");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
@@ -64,7 +65,7 @@ $(document).ready(function(){
 			rando = Math.floor(divs.length * Math.random());
 		}
 	}
-});
+}*/drawEnemies());
 var checker = true;
 document.onkeypress = function(evt) {
 if(checker){
