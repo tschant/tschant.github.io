@@ -51,8 +51,8 @@ function drawEnemies(numEnemies){
 }
 
 function moveEnemies(){
-	var parents = $("enemy").parents().attr('class');
-	alert ("parents[0]");
+	var parents = $("enemy").parent().attr('class');
+	alert (parents[0]);
 }
 window.onload = drawEnemies(maxEnemies);
 var mytimer = setInterval(function(){moveEnemies();}, 1000);
