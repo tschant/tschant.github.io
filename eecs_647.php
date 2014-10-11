@@ -51,6 +51,7 @@ function drawEnemies(numEnemies){
 }
 
 function moveEnemies(){
+checker = false;
 	for (var i = 0; i<$(".enemy").length; i++){
 		var parentid = $(".enemy").eq(i).parent().attr('id');
 		var rando = Math.floor(4 * Math.random());
@@ -67,6 +68,7 @@ function moveEnemies(){
 		parentnum = parentnum + (amount * neg);
 		alert(parentnum);
 	}
+checker = true;
 }
 window.onload = drawEnemies(maxEnemies);
 var mytimer = setInterval(function(){moveEnemies();}, 1000);
