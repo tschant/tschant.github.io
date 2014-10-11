@@ -50,7 +50,7 @@ function drawEnemies(numEnemies){
 	}
 }
 
-$(document).ready(drawEnemies(maxEnemies););
+window.onload = drawEnemies(maxEnemies);
 
 var checker = true;
 document.onkeypress = function(evt) {
