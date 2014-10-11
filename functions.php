@@ -6,6 +6,8 @@ if (isset($_POST['callFunc1'])) {
 	echo func1($_POST['callFunc1']);
 }if (isset($_POST['callleaveR']) && isset($_POST['magicsauce'])) {
 	echo leaveR($_POST['callleaveR'],$_POST['magicsauce']);
+}if (isset($_POST['getEnemies'])) {
+	echo getEnemies($_POST['getEnemies']);
 }/* else (isset($_POST['flag'])) {
 	if($_POST['flag'] == 'sign_in'){
 		echo sign_in($_POST['user']);
@@ -22,17 +24,12 @@ function func1($data){
 	return array("success"=>true, "message"=>"Updated user: ".$username);
 }
 
-function getEnemies($Loc){
+function getEnemies($Locid){
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 	or die('Could not connect: ' . mysql_error());
 	//echo 'Connected successfully';
 	mysql_select_db('chefley') or die('Could not select database');
-	$username = "BlakeHefley"; //Remove once session is working
-	$query = "UPDATE User Set Loc = ".$Loc.", Locid = ".$Locid." WHERE Username LIKE '".$username."'";
-	mysql_query($query,$conn2);
-	
-	$user = mysql_query("SELECT * FROM User where Username LIKE '".$username."'",$conn2);
-	$u = mysql_fetch_row($user);
+
 	$result = mysql_query("SELECT * FROM Location where Location_id = ".$Locid,$conn2);
 	$r = mysql_fetch_row($result);
 	
