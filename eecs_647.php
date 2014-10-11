@@ -61,7 +61,7 @@ checker = false;
 		if (rando < 2){
 			var amount = 1;
 		}else{
-			var amount = 5;
+			var amount = size;
 		}if (rando % 2 == 0){
 			var neg = 1;
 		}else{
