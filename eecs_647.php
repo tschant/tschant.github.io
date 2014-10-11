@@ -51,10 +51,19 @@ function drawEnemies(numEnemies){
 }
 
 function moveEnemies(){
-	var parents = $(".enemy");
-	alert(parents.length);
 	for (var i = 0; i<$(".enemy").length; i++){
-		alert($(".enemy").eq(i).parent().attr('id'));
+		var parentid = $(".enemy").eq(i).parent().attr('id');
+		var rando = Math.floor(4 * Math.random());
+		if (rando < 2){
+			var amount = 1;
+		}else{
+			var amount = 5;
+		}if (rando % 2 == 0){
+			var neg = 1;
+		}else{
+			var neg = -1;
+		}var parentnum = parseInt(parentid.match(/\d/g));
+		alert(parentnum);
 	}
 }
 window.onload = drawEnemies(maxEnemies);
