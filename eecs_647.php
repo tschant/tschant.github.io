@@ -10,7 +10,16 @@ mysql_select_db('chefley') or die('Could not select database');
 
 session_start();
 
-
+if($create_username){
+	$user = mysql_query("SELECT * FROM User WHERE Username like '".$create_username."'",$conn2);
+	$u = mysql_fetch_row($user);
+	if(!$u){
+		mysql_query("INSERT INTO User VALUES('".$create_username."', 50, 0)");
+	}	else {
+		echo "<script type='text/javascript'>alert('Username is already taken, sorry...'); window.location = 'index.html'; </script>";
+		exit;
+	}
+}
 $user = mysql_query("SELECT * FROM User WHERE Username like '".$_SESSION["username"]."'",$conn2);
 $u = mysql_fetch_row($user);
 $result = mysql_query("SELECT * FROM Location, ImageSet WHERE ImageSet.ImageSetId = Location.ImageSetId AND Location_id = ".$u[2],$conn2);
