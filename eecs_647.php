@@ -5,10 +5,11 @@ $conn3 = mysql_connect('mysql.eecs.ku.edu', 'jlipscom', 'Uo16uI37')
 	or die('Could not connect: ' . mysql_error());
 $conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 	or die('Could not connect: ' . mysql_error());
+
 //echo 'Connected successfully';
 mysql_select_db('chefley') or die('Could not select database');
 
-session_start();
+//session_start();
 
 if($create_username){
 	$user = mysql_query("SELECT * FROM User WHERE Username like '".$create_username."'",$conn2);
@@ -22,6 +23,13 @@ if($create_username){
 }
 $user = mysql_query("SELECT * FROM User WHERE Username like '".$_SESSION["username"]."'",$conn2);
 $u = mysql_fetch_row($user);
+if($u[3]){
+	echo "<script type='text/javascript'>alert('User is already logged in. Are you logged in on a different computer? Or are you account sharing you dirty plebe?'); window.location = 'index.html'; </script>";
+	exit;
+} else {
+	$query = "UPDATE User Set logged_in = 1 WHERE Username LIKE '".$u[0]."'";
+	mysql_query($query,$conn2);
+}
 $result = mysql_query("SELECT * FROM Location, ImageSet WHERE ImageSet.ImageSetId = Location.ImageSetId AND Location_id = ".$u[2],$conn2);
 $r = mysql_fetch_row($result);
 $_SESSION["username"] = $u[0];
@@ -41,7 +49,7 @@ for($i = $offset; $i<mysql_num_fields ($result); $i++){
 }if($u[2] == 0.2){
 	Echo "<div class = \"Sanctuary\">Sanctuary</div>";
 }
-
+echo $_SESSION["username"];
 ?>
 <script>
 var maxEnemies = <? echo $r[0];?>;
@@ -49,6 +57,7 @@ var myLoc = <? echo $u[1]; ?>;
 var myLocid = <? echo $u[2]; ?>;
 var offset = <? echo $offset; ?>;
 var size = <? echo $elementsperrow;?>;
+//var username = <? echo $_SESSION["username"];?>;
 function drawEnemies(numEnemies){
 	var divs = document.getElementsByClassName("box");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
@@ -90,6 +99,16 @@ checker = false;
 checker = true;
 }
 window.onload = drawEnemies(maxEnemies);
+$(window).on('beforeunload', function () {
+
+  $.ajax({
+	    url: 'functions.php',
+	    type: 'post',
+	    async: false,
+	    data: { "logout": <?echo "'".$_SESSION["username"]."'";?>}/*,
+	    success: function(response) {debugger; }*/
+	});
+});
 var mytimer = setInterval(function(){moveEnemies();}, 1000);
 var checker = true;
 document.onkeypress = function(evt) {
