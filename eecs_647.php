@@ -11,7 +11,7 @@ mysql_select_db('chefley') or die('Could not select database');
 session_start();
 
 
-$user = mysql_query("SELECT * FROM User",$conn2);
+$user = mysql_query("SELECT * FROM User WHERE Username = ".$username,$conn2);
 $u = mysql_fetch_row($user);
 $result = mysql_query("SELECT * FROM Location, ImageSet WHERE ImageSet.ImageSetId = Location.ImageSetId AND Location_id = ".$u[2],$conn2);
 $r = mysql_fetch_row($result);
