@@ -8,12 +8,23 @@ if (isset($_POST['callFunc1'])) {
 	echo leaveR($_POST['callleaveR'],$_POST['magicsauce']);
 }if (isset($_POST['getEnemies'])) {
 	echo getEnemies($_POST['getEnemies']);
+}if(isset($_POST["logout"])){
+	echo logout($_POST["logout"]);
 }/* else (isset($_POST['flag'])) {
 	if($_POST['flag'] == 'sign_in'){
 		echo sign_in($_POST['user']);
 	}
 }*/
-
+function logout($username) {
+	session_unset();
+	session_destroy();
+	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
+		or die('Could not connect: ' . mysql_error());
+	mysql_select_db('chefley') or die('Could not select database');
+	$query = "UPDATE User Set logged_in = 0 WHERE Username LIKE '".$username."'";
+	mysql_query($query,$conn2);
+	return array("success"=>true, "message"=>"Goodbye! Come again NEVER!");
+}
 function func1($data){
 	$username = $_SESSION["username"];
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
