@@ -189,7 +189,7 @@ if(checker){
 	    url: 'functions.php',
 	    type: 'post',
 	    data: { "callFunc1": myLoc},
-	    success: function(response) {alert(response); }
+	    success: function(response) {alert(response["message"]); }
 	});
     }else if (charCode == 115 && myLoc <size*size-offset && document.getElementById("box".concat((myLoc+size).toString())).getElementsByClassName("object").length == 0){
     	    	if(document.getElementById("box".concat((myLoc+size).toString())).innerHTML.indexOf("enemy") > -1){
