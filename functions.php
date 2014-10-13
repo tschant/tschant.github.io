@@ -32,6 +32,14 @@ function func1($data){
 	mysql_select_db('chefley') or die('Could not select database');
 	$query = "UPDATE User Set Loc = ".$data." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
+	$names = mysql_query("Select * From ImageSet", $conn2);
+	while ($row = $names->fetchArray()){
+		for($i = 0; $i < $results->numColumns(); $i++){
+			if($row[i] == "blue"){
+				mysql_query("UPDATE ImageSet Set ".columnName($i)." = 'http://i38.tinypic.com/25ul6hg.jpg'", $conn2);
+			}	
+		}
+	}
 	return array("success"=>true, "message"=>"Updated user: ".$username);
 }
 
