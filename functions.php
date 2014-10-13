@@ -28,9 +28,12 @@ function logout($username) {
 function func1($data){
 	$username = $_SESSION["username"];
 	$names = mysql_query("Select * From ImageSet", $conn2);
+	while($row = mysql_fetch_row($names)){
 	for($i = 0; $i < $names->numColumns(); $i++){
+		if($row[$i] == "blue"){
 		mysql_query("UPDATE ImageSet Set ".$names->columnName($i)." = 'http://i38.tinypic.com/25ul6hg.jpg'", $conn2);
-	}
+		}
+	}}
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 		or die('Could not connect: ' . mysql_error());
 	mysql_select_db('chefley') or die('Could not select database');
