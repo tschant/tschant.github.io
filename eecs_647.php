@@ -26,6 +26,9 @@ $u = mysql_fetch_row($user);
 if($u[3]){
 	echo "<script type='text/javascript'>alert('User is already logged in. Are you logged in on a different computer? Or are you account sharing you dirty plebe?'); window.location = 'index.html'; </script>";
 	exit;
+} else if(!$u[0]) {
+	echo "<script type='text/javascript'>alert('No such user found, try again.'); window.location = 'index.html'; </script>";
+	exit;		
 } else {
 	$query = "UPDATE User Set logged_in = 1 WHERE Username LIKE '".$u[0]."'";
 	mysql_query($query,$conn2);
