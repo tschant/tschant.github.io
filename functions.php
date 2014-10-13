@@ -28,7 +28,7 @@ function logout($username) {
 function func1($data){
 	$username = $_SESSION["username"];
 	$names = mysql_query("Select * From ImageSet", $conn2);
-	for($i = 0; $i < $results->numColumns(); $i++){
+	for($i = 0; $i < $names->numColumns(); $i++){
 		mysql_query("UPDATE ImageSet Set ".$names->columnName($i)." = 'http://i38.tinypic.com/25ul6hg.jpg'", $conn2);
 	}
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
