@@ -34,9 +34,9 @@ function func1($data){
 	mysql_query($query,$conn2);
 	$names = mysql_query("Select * From ImageSet", $conn2);
 	for($i = 0; $i < $results->numColumns(); $i++){
-		mysql_query("UPDATE ImageSet Set ".$results->columnName($i)." = 'http://i38.tinypic.com/25ul6hg.jpg' WHERE", $conn2);
+		mysql_query("UPDATE ImageSet Set ".$results->columnName($i)." = 'http://i38.tinypic.com/25ul6hg.jpg'", $conn2);
 	}
-	return array("success"=>true, "message"=>"Updated user: ".$username);
+	return array("success"=>true, "message"=>"updated with query");
 }
 
 function getEnemies($Locid){
