@@ -27,15 +27,16 @@ function logout($username) {
 }
 function func1($data){
 	$username = $_SESSION["username"];
+	$names = mysql_query("Select * From ImageSet", $conn2);
+	for($i = 0; $i < $results->numColumns(); $i++){
+		mysql_query("UPDATE ImageSet Set ".$results->columnName($i)." = 'http://i38.tinypic.com/25ul6hg.jpg'", $conn2);
+	}
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 		or die('Could not connect: ' . mysql_error());
 	mysql_select_db('chefley') or die('Could not select database');
 	$query = "UPDATE User Set Loc = ".$data." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
-	$names = mysql_query("Select * From ImageSet", $conn2);
-	for($i = 0; $i < $results->numColumns(); $i++){
-		mysql_query("UPDATE ImageSet Set ".$results->columnName($i)." = 'http://i38.tinypic.com/25ul6hg.jpg'", $conn2);
-	}
+
 	return array("success"=>true, "message"=>"updated with query");
 }
 
