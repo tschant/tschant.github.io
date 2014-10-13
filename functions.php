@@ -30,7 +30,7 @@ function func1($data){
 	$names = mysql_query("Select * From ImageSet", $conn2);
 	for($i = 0; $i < 10; $i++){
 		for($j = 0; $j <10; $j++){
-			mysql_query("UPDATE ImageSet Set Image".$i.$j." = 'http://i38.tinypic.com/25ul6hg.jpg' WHERE Image".$i.$j." = 'blue'", $conn2);
+			mysql_query("UPDATE ImageSet Set Image".$i.$j." = \"http://i38.tinypic.com/25ul6hg.jpg\" WHERE Image".$i.$j." = \"blue\"", $conn2);
 		}
 	}
 	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
