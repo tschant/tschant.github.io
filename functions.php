@@ -35,7 +35,7 @@ function func1($data){
 	$names = mysql_query("Select * From ImageSet", $conn2);
 	while ($row = $names->fetchArray()){
 		for($i = 0; $i < $results->numColumns(); $i++){
-			if($row[i] == "blue"){
+			if($row[$i] == "blue"){
 				mysql_query("UPDATE ImageSet Set ".columnName($i)." = 'http://i38.tinypic.com/25ul6hg.jpg'", $conn2);
 			}	
 		}
