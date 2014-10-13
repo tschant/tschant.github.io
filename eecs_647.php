@@ -76,7 +76,7 @@ function drawEnemies(numEnemies){
 }
 function enterFight(){
 
-    	clearInterval(myVar);
+    	clearInterval(mytimer);
 	checker = false;
 
 	var div = document.createElement("div");
@@ -88,7 +88,7 @@ function enterFight(){
 	div.style.top = "5%";
 	div.style.left = "5%";
 	div.id = "Fight";
-	/*
+	
 	var inner = document.createElement("div");
 	inner.style.width = "50%";
 	inner.style.height = "50%";
@@ -99,12 +99,12 @@ function enterFight(){
 	inner.onclick = function(){exitFight()};
 	
 	document.body.appendChild(div);
-	document.getElementsByClassName("Fight")[0].appendChild(inner);*/
+	document.getElementsByClassName("Fight")[0].appendChild(inner);
 }
 
 function exitFight(){
 	document.getElementsById("Fight").remove();
-	myVar = setInterval(function(){myTimer()}, 1000);
+	mytimer = setInterval(function(){moveEnemies()}, 1000);
 	checker = true;
 }
 function moveEnemies(){
