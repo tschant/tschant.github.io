@@ -96,7 +96,7 @@ function enterFight(){
 	inner.top = "50%";
 	inner.left="50%";
 	inner.innerHTML = "Run Away";
-	inner.onclick = exitFight;
+	inner.onclick = function(){exitFight()};
 	
 	document.body.appendChild(div);
 	document.getElementsByClassName("Fight")[0].appendChild(inner);
