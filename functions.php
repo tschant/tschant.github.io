@@ -75,14 +75,18 @@ function leaveR($Loc, $Locid){
 	$elementsperrow = sqrt($elementsperrow);
 	$percentelement = 100/ $elementsperrow;
 	for($i = $offset; $i<mysql_num_fields ($result); $i++){
-		if($Loc == $i){
-			$code = $code."<div class=\"box\" id = \"box".$i."\" style=\"background-image: url(".$r[$i]."); background-size: 100% 100%; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
-		}else{
-			$code = $code."<div class=\"box\" id = \"box".$i."\" style=\"background-image: url(".$r[$i]."); background-size: 100% 100%; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
-		}
-	}if($u[2] == 0.2){
-		$code = $code."<div class=\"sanctuary\">Sanctuary</div>";
+	Echo "<div class = \"box\" id = \"box".$i."\">";
+	if($r[$i] != $grass){
+		Echo "<div class= \"object\" style =\"background-image: url(".$r[$i].");\">";
+	}if($u[1] == $i){
+		Echo "<div id = \"me\">&nbsp;</div>";
+	}else{
+		Echo "&nbsp;";
+	}if($r[$i] != $grass){
+		echo "</div>";
 	}
+	Echo "</div>";
+}
 	return $code;
 }
 
