@@ -99,7 +99,7 @@ function enterFight(){
 	inner.onclick = function(){exitFight()};
 	
 	document.body.appendChild(div);
-	document.getElementsByClassName("Fight")[0].appendChild(inner);
+	document.getElementsById("Fight")[0].appendChild(inner);
 }
 
 function exitFight(){
