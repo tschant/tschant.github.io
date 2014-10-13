@@ -68,9 +68,9 @@ function leaveR($Loc, $Locid){
 	$percentelement = 100/ $elementsperrow;
 	for($i = $offset; $i<mysql_num_fields ($result); $i++){
 		if($Loc == $i){
-			$code = $code."<div class=\"box\" id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
+			$code = $code."<div class=\"box\" id = \"box".$i."\" style=\"background-image: ".$r[$i]."; background-size: 100% 100%; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
 		}else{
-			$code = $code."<div class=\"box\" id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
+			$code = $code."<div class=\"box\" id = \"box".$i."\" style=\"background-image: ".$r[$i]."; background-size: 100% 100%; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 		}
 	}if($u[2] == 0.2){
 		$code = $code."<div class=\"sanctuary\">Sanctuary</div>";
