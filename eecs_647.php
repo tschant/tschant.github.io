@@ -49,7 +49,7 @@ for($i = $offset; $i<mysql_num_fields ($result); $i++){
 }if($u[2] == 0.2){
 	Echo "<div class = \"Sanctuary\">Sanctuary</div>";
 }
-echo $_SESSION["username"];
+
 ?>
 <script>
 var maxEnemies = <? echo $r[0];?>;
