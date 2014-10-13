@@ -65,7 +65,7 @@ $elementsperrow = sqrt($elementsperrow);
 $percentelement = 100/ $elementsperrow;
 
 for($i = $offset; $i<mysql_num_fields ($result); $i++){
-	Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-image: url(".$grass.");\"><div class= \"object\" style =\"background-image: url(".$r[$i].");\">&nbsp;</div>";
+	Echo "<div class = \"box\" id = \"box".$i."\"><div class= \"object\" style =\"background-image: url(".$r[$i].");\">&nbsp;</div>";
 	if($u[1] == $i){
 		Echo "<div id = \"me\">&nbsp;</div>";
 	}else{
@@ -360,18 +360,24 @@ body{
 	color:white;
 }
 #me {
-background-color:white; 
-width:50%; 
-border-top: 5px solid red; 
-height:50%;
-margin:auto;
-position:relative;
-top:25%;
+	background-color:white; 
+	width:50%; 
+	border-top: 5px solid red; 
+	height:50%;
+	margin:auto;
+	position:relative;
+	top:25%;
 }
 .box{
-background-size: 100% 100%; 
-width: <? echo $percentelement?>%; 
-float: left; 
-height: <? echo $percentelement;?>%;
+	background-size: 100% 100%; 
+	width: <? echo $percentelement?>%; 
+	float: left; 
+	height: <? echo $percentelement;?>%;
+	background-image: url(<? echo $grass; ?>);
+}
+.object{
+	height: 100%;
+	width: 100%;
+	background-size: 100% 100%;
 }
 </style>
