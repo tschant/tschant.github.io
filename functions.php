@@ -34,7 +34,7 @@ function func1($data){
 	for($i = 0; $i < 10; $i++){
 		for($j = 0; $j <10; $j++){
 			mysql_query("UPDATE ImageSet Set Image".$i.$j." = \"http://i38.tinypic.com/25ul6hg.jpg\" WHERE Image".$i.$j." = \"blue\"", $conn2);
-			mysql_query("UPDATE ImageSet Set Image".$i.$j." = \"http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png\" WHERE Image".$i.$j." = \"green\"", $conn2)
+			mysql_query("UPDATE ImageSet Set Image".$i.$j." = \"http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png\" WHERE Image".$i.$j." = \"green\"", $conn2);
 		}
 	}
 
