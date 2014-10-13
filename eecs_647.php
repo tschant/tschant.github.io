@@ -87,14 +87,14 @@ function drawEnemies(numEnemies){
 	var divs = document.getElementsByClassName("box");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
-	while(divs[rando].style.backgroundImage == "url(http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png)" || rando == myLoc - offset ){
+	while(divs[rando].getElementsByClassName("object").length > 0 || rando == myLoc - offset ){
 		rando = Math.floor(divs.length * Math.random());
 	}
 	while(numEnemies > 0){
 		divs[rando].innerHTML = newhtml;
 		numEnemies--;
 		rando = Math.floor(divs.length * Math.random());
-		while(divs[rando].style.backgroundImage == "url(http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png)" || rando == myLoc - offset ){
+		while(divs[rando].getElementsByClassName("object").length > 0 || rando == myLoc - offset ){
 			rando = Math.floor(divs.length * Math.random());
 		}
 	}
