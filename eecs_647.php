@@ -99,11 +99,11 @@ function enterFight(){
 	inner.onclick = function(){exitFight()};
 	
 	document.body.appendChild(div);
-	document.getElementsById("Fight")[0].appendChild(inner);
+	document.getElementById("Fight").appendChild(inner);
 }
 
 function exitFight(){
-	document.getElementsById("Fight").remove();
+	document.getElementById("Fight").remove();
 	mytimer = setInterval(function(){moveEnemies()}, 1000);
 	checker = true;
 }
