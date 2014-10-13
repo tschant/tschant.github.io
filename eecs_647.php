@@ -176,7 +176,7 @@ if(checker){
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
-    if (charCode == 97 && myLoc >offset && myLoc % size != offset && document.getElementById("box".concat((myLoc-1).toString())).getElementsByClassName("object").length = 0){
+    if (charCode == 97 && myLoc >offset && myLoc % size != offset && document.getElementById("box".concat((myLoc-1).toString())).getElementsByClassName("object").length == 0){
     	if(document.getElementById("box".concat((myLoc-1).toString())).innerHTML.indexOf("enemy") > -1){
     		enterFight();
     	}
@@ -191,7 +191,7 @@ if(checker){
 	    data: { "callFunc1": myLoc}/*,
 	    success: function(response) {alert(response); }*/
 	});
-    }else if (charCode == 115 && myLoc <size*size-offset && document.getElementById("box".concat((myLoc+size).toString())).getElementsByClassName("object").length = 0){
+    }else if (charCode == 115 && myLoc <size*size-offset && document.getElementById("box".concat((myLoc+size).toString())).getElementsByClassName("object").length == 0){
     	    	if(document.getElementById("box".concat((myLoc+size).toString())).innerHTML.indexOf("enemy") > -1){
     		enterFight();
     	}
@@ -206,7 +206,7 @@ if(checker){
 	    data: { "callFunc1": myLoc}/*,
 	    success: function(response) { }*/
 	});
-    }else if (charCode == 119 && myLoc >size+offset-1 && document.getElementById("box".concat((myLoc-size).toString())).getElementsByClassName("object").length = 0){
+    }else if (charCode == 119 && myLoc >size+offset-1 && document.getElementById("box".concat((myLoc-size).toString())).getElementsByClassName("object").length == 0){
     	    	if(document.getElementById("box".concat((myLoc-size).toString())).innerHTML.indexOf("enemy") > -1){
     		enterFight();
     	}
@@ -221,7 +221,7 @@ if(checker){
 	    data: { "callFunc1": myLoc}/*,
 	    success: function(response) { }*/
 	});
-    }else if (charCode == 100 && myLoc >offset-1 && myLoc % size != offset-1 && document.getElementById("box".concat((myLoc+1).toString())).getElementsByClassName("object").length = 0){
+    }else if (charCode == 100 && myLoc >offset-1 && myLoc % size != offset-1 && document.getElementById("box".concat((myLoc+1).toString())).getElementsByClassName("object").length == 0){
     	    	if(document.getElementById("box".concat((myLoc+1).toString())).innerHTML.indexOf("enemy") > -1){
     		enterFight();
     	}
