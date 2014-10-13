@@ -45,9 +45,9 @@ $percentelement = 100/ $elementsperrow;
 
 for($i = $offset; $i<mysql_num_fields ($result); $i++){
 	if($u[1] == $i){
-		Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; border-top: 5px solid red; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
+		Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-image: url(".$r[$i]."); width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; border-top: 5px solid red; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
 	}else{
-		Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-color: ".$r[$i]."; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
+		Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-image: url(".$r[$i]."); width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
 	}
 }if($u[2] == 0.2){
 	Echo "<div class = \"Sanctuary\">Sanctuary</div>";
@@ -65,14 +65,14 @@ function drawEnemies(numEnemies){
 	var divs = document.getElementsByClassName("box");
 	var newhtml = "<div class = \"enemy\">&nbsp;</div>";
 	var rando = Math.floor(divs.length * Math.random());
-	while(divs[rando].style.backgroundColor == "green" || rando == myLoc - offset ){
+	while(divs[rando].style.backgroundImage == "url(http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png)" || rando == myLoc - offset ){
 		rando = Math.floor(divs.length * Math.random());
 	}
 	while(numEnemies > 0){
 		divs[rando].innerHTML = newhtml;
 		numEnemies--;
 		rando = Math.floor(divs.length * Math.random());
-		while(divs[rando].style.backgroundColor == "green" || rando == myLoc - offset ){
+		while(divs[rando].style.backgroundImage == "url(http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png)" || rando == myLoc - offset ){
 			rando = Math.floor(divs.length * Math.random());
 		}
 	}
@@ -125,7 +125,7 @@ checker = false;
 			var neg = -1;
 		}var parentnum = parseInt(parentid.substr(3));
 		var newparentnum = parentnum + (amount * neg);
-		if((rando == 0 && parentnum % size == offset-1) || (rando == 1 && parentnum % size == offset) || (rando == 2 && parentnum>size*size - offset)|| (rando == 3 && parentnum<size-offset+1)|| (document.getElementById("box".concat(newparentnum.toString())).style.backgroundColor == "green") || ((document.getElementById("box".concat(newparentnum.toString())).innerHTML.length != 0) && (document.getElementById("box".concat(newparentnum.toString())).innerHTML != "&nbsp;"))){}
+		if((rando == 0 && parentnum % size == offset-1) || (rando == 1 && parentnum % size == offset) || (rando == 2 && parentnum>size*size - offset)|| (rando == 3 && parentnum<size-offset+1)|| (document.getElementById("box".concat(newparentnum.toString())).style.backgroundImage == "url(http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png)") || ((document.getElementById("box".concat(newparentnum.toString())).innerHTML.length != 0) && (document.getElementById("box".concat(newparentnum.toString())).innerHTML != "&nbsp;"))){}
 		else{
 			document.getElementById("box".concat(newparentnum.toString())).innerHTML = document.getElementById("box".concat(parentnum.toString())).innerHTML;
 			document.getElementById("box".concat(parentnum.toString())).innerHTML= "&nbsp;";
@@ -151,7 +151,7 @@ if(checker){
     evt = evt || window.event;
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
-    if (charCode == 97 && myLoc >offset && myLoc % size != offset && document.getElementById("box".concat((myLoc-1).toString())).style.backgroundColor != "green"){
+    if (charCode == 97 && myLoc >offset && myLoc % size != offset && document.getElementById("box".concat((myLoc-1).toString())).style.backgroundImage != "url(http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png)"){
     	if(document.getElementById("box".concat((myLoc-1).toString())).innerHTML.indexOf("enemy") > -1){
     		enterFight();
     	}
@@ -166,7 +166,7 @@ if(checker){
 	    data: { "callFunc1": myLoc}/*,
 	    success: function(response) {alert(response); }*/
 	});
-    }else if (charCode == 115 && myLoc <size*size-offset && document.getElementById("box".concat((myLoc+size).toString())).style.backgroundColor != "green"){
+    }else if (charCode == 115 && myLoc <size*size-offset && document.getElementById("box".concat((myLoc+size).toString())).style.backgroundImage != "url(http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png)"){
     	    	if(document.getElementById("box".concat((myLoc+size).toString())).innerHTML.indexOf("enemy") > -1){
     		enterFight();
     	}
@@ -181,7 +181,7 @@ if(checker){
 	    data: { "callFunc1": myLoc}/*,
 	    success: function(response) { }*/
 	});
-    }else if (charCode == 119 && myLoc >size+offset-1 && document.getElementById("box".concat((myLoc-size).toString())).style.backgroundColor != "green"){
+    }else if (charCode == 119 && myLoc >size+offset-1 && document.getElementById("box".concat((myLoc-size).toString())).style.backgroundImage != "url(http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png)"){
     	    	if(document.getElementById("box".concat((myLoc-size).toString())).innerHTML.indexOf("enemy") > -1){
     		enterFight();
     	}
@@ -196,7 +196,7 @@ if(checker){
 	    data: { "callFunc1": myLoc}/*,
 	    success: function(response) { }*/
 	});
-    }else if (charCode == 100 && myLoc >offset-1 && myLoc % size != offset-1 && document.getElementById("box".concat((myLoc+1).toString())).style.backgroundColor != "green"){
+    }else if (charCode == 100 && myLoc >offset-1 && myLoc % size != offset-1 && document.getElementById("box".concat((myLoc+1).toString())).style.backgroundImage != "url(http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png)"){
     	    	if(document.getElementById("box".concat((myLoc+1).toString())).innerHTML.indexOf("enemy") > -1){
     		enterFight();
     	}
