@@ -65,8 +65,10 @@ $elementsperrow = sqrt($elementsperrow);
 $percentelement = 100/ $elementsperrow;
 
 for($i = $offset; $i<mysql_num_fields ($result); $i++){
-	Echo "<div class = \"box\" id = \"box".$i."\"><div class= \"object\" style =\"background-image: url(".$r[$i].");\">&nbsp;</div>";
-	if($u[1] == $i){
+	Echo "<div class = \"box\" id = \"box".$i."\">";
+	if($r[$i] != $grass){
+		Echo "<div class= \"object\" style =\"background-image: url(".$r[$i].");\">&nbsp;</div>";
+	}if($u[1] == $i){
 		Echo "<div id = \"me\">&nbsp;</div>";
 	}else{
 		Echo "&nbsp;";
