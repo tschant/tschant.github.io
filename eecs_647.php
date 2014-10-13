@@ -74,7 +74,38 @@ function drawEnemies(numEnemies){
 		}
 	}
 }
+function enterFight(){
 
+    	clearInterval(myVar);
+	checker = false;
+
+	var div = document.createElement("div");
+	div.style.width = "90%";
+	div.style.height = "90%";
+	div.style.background = "white";
+	div.style.color = "black";
+	div.style.position = "absoloute";
+	div.style.top = "5%";
+	div.style.left = "5%";
+	div.className = "Fight";
+	
+	var inner = document.createElement("div");
+	inner.style.width = "50%";
+	inner.style.height = "50%";
+	inner.position = "relative";
+	inner.top = "50%";
+	inner.left="50%";
+	inner.onclick = exitFight;
+	
+	document.body.appendChild(div);
+	document.getElementByClassName("Fight")[0].appendChild(inner);
+}
+
+function exitFight(){
+	document.getElementByClassName("Fight")[0].remove();
+	myVar = setInterval(function(){myTimer()}, 1000);
+	checker = true;
+}
 function moveEnemies(){
 checker = false;
 	for (var i = 0; i<$(".enemy").length; i++){
@@ -117,6 +148,9 @@ if(checker){
     var charCode = evt.keyCode || evt.which;
     var charStr = String.fromCharCode(charCode);
     if (charCode == 97 && myLoc >offset && myLoc % size != offset && document.getElementById("box".concat((myLoc-1).toString())).style.backgroundColor != "green"){
+    	if(document.getElementById("box".concat((myLoc-1).toString())).innerHTML.indexOf("enemy") > -1){
+    		enterFight();
+    	}
     	document.getElementById("box".concat((myLoc-1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	document.getElementById("me").style.border = "0px solid red";
@@ -129,6 +163,9 @@ if(checker){
 	    success: function(response) {alert(response); }*/
 	});
     }else if (charCode == 115 && myLoc <size*size-offset && document.getElementById("box".concat((myLoc+size).toString())).style.backgroundColor != "green"){
+    	    	if(document.getElementById("box".concat((myLoc+size).toString())).innerHTML.indexOf("enemy") > -1){
+    		enterFight();
+    	}
     	document.getElementById("box".concat((myLoc+size).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc+size;
@@ -141,6 +178,9 @@ if(checker){
 	    success: function(response) { }*/
 	});
     }else if (charCode == 119 && myLoc >size+offset-1 && document.getElementById("box".concat((myLoc-size).toString())).style.backgroundColor != "green"){
+    	    	if(document.getElementById("box".concat((myLoc-size).toString())).innerHTML.indexOf("enemy") > -1){
+    		enterFight();
+    	}
     	document.getElementById("box".concat((myLoc-size).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc= myLoc-size;
@@ -153,6 +193,9 @@ if(checker){
 	    success: function(response) { }*/
 	});
     }else if (charCode == 100 && myLoc >offset-1 && myLoc % size != offset-1 && document.getElementById("box".concat((myLoc+1).toString())).style.backgroundColor != "green"){
+    	    	if(document.getElementById("box".concat((myLoc+1).toString())).innerHTML.indexOf("enemy") > -1){
+    		enterFight();
+    	}
     	document.getElementById("box".concat((myLoc+1).toString())).innerHTML = document.getElementById("box".concat(myLoc.toString())).innerHTML;
     	document.getElementById("box".concat(myLoc.toString())).innerHTML = "&nbsp;";
     	myLoc++;
