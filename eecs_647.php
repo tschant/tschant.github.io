@@ -1,15 +1,32 @@
 <?
+/*
+Hooking up to Databases!
+$conn contains:
+	Nothing.
+$conn3 contains:
+	Enemies
+	Drops
+	Items
+	Inventory
+$conn 2 contains:
+	User
+	Location
+	ImageSet
+*/
+
 $conn = mysql_connect('mysql.eecs.ku.edu', 'tschante', 'monkey08')
 	or die('Could not connect: ' . mysql_error());
 $conn3 = mysql_connect('mysql.eecs.ku.edu', 'jlipscom', 'Uo16uI37')
 	or die('Could not connect: ' . mysql_error());
 $conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
 	or die('Could not connect: ' . mysql_error());
-
-//echo 'Connected successfully';
 mysql_select_db('chefley') or die('Could not select database');
 
-//session_start();
+/*
+If user is creating a new account, check to ensure that the username is not already taken.
+If it is not taken, spawn them in the opening area.
+Otherwise alert them to the error.
+*/
 
 if($create_username){
 	$user = mysql_query("SELECT * FROM User WHERE Username like '".$create_username."'",$conn2);
@@ -21,10 +38,12 @@ if($create_username){
 		exit;
 	}
 }
+
 $user = mysql_query("SELECT * FROM User WHERE Username like '".$_SESSION["username"]."'",$conn2);
 $u = mysql_fetch_row($user);
+
 if($u[3]){
-	echo "<script type='text/javascript'>alert('User is already logged in. Are you logged in on a different computer? Or are you account sharing you dirty plebe?'); window.location = 'index.html'; </script>";
+	echo "<script type='text/javascript'>alert('User is already logged in. Are you logged in on a different computer?'); window.location = 'index.html'; </script>";
 	exit;
 } else if(!$u[0]) {
 	echo "<script type='text/javascript'>alert('No such user found, try again.'); window.location = 'index.html'; </script>";
@@ -44,13 +63,12 @@ $elementsperrow = sqrt($elementsperrow);
 $percentelement = 100/ $elementsperrow;
 
 for($i = $offset; $i<mysql_num_fields ($result); $i++){
+	Echo "<div class = \"box\" id = \"box".$i."\">";
 	if($u[1] == $i){
-		Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-image: url(".$r[$i]."); background-size: 100% 100%; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\"><div id = \"me\"style=\"background-color:white; width:50%; border-top: 5px solid red; height:50%;margin:auto;position:relative; top:25%;\">&nbsp;</div></div>";
+		Echo "<div id = \"me\">&nbsp;</div>";
 	}else{
-		Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-image: url(".$r[$i]."); background-size: 100% 100%; width: ".$percentelement."%; float: left; height: ".$percentelement."%;\">&nbsp;</div>";
-	}
-}if($u[2] == 0.2){
-	Echo "<div class = \"Sanctuary\">Sanctuary</div>";
+		Echo "&nbsp;";
+	}Echo "</div>";
 }
 
 ?>
@@ -338,5 +356,20 @@ body{
 	left:33%;
 	font-size:200px;
 	color:white;
+}
+#me {
+background-color:white; 
+width:50%; 
+border-top: 5px solid red; 
+height:50%;
+margin:auto;
+position:relative;
+top:25%;
+}
+.box{
+background-size: 100% 100%; 
+width: <? echo $percentelement?>%; 
+float: left; 
+height: <? echo $percentelement;?>%;
 }
 </style>
