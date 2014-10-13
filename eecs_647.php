@@ -92,9 +92,9 @@ function enterFight(){
 	var inner = document.createElement("div");
 	inner.style.width = "50%";
 	inner.style.height = "50%";
-	inner.position = "relative";
-	inner.top = "50%";
-	inner.left="50%";
+	inner.style.position = "relative";
+	inner.style.top = "50%";
+	inner.style.left="50%";
 	inner.innerHTML = "Run Away";
 	inner.onclick = function(){exitFight()};
 	
