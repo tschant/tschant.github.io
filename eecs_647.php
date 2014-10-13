@@ -84,7 +84,7 @@ function enterFight(){
 	div.style.height = "90%";
 	div.style.background = "white";
 	div.style.color = "black";
-	div.style.position = "absoloute";
+	div.style.position = "absolute";
 	div.style.top = "5%";
 	div.style.left = "5%";
 	div.id = "Fight";
