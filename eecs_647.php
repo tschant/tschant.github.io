@@ -75,7 +75,7 @@ function drawEnemies(numEnemies){
 	}
 }
 function enterFight(){
-/*
+
     	clearInterval(myVar);
 	checker = false;
 
@@ -96,14 +96,14 @@ function enterFight(){
 	inner.top = "50%";
 	inner.left="50%";
 	inner.innerHTML = "Run Away";
-	//inner.onclick = exitFight;
+	inner.onclick = exitFight;
 	
 	document.body.appendChild(div);
-	document.getElementByClassName("Fight")[0].appendChild(inner);*/
+	document.getElementsByClassName("Fight")[0].appendChild(inner);
 }
 
 function exitFight(){
-	document.getElementByClassName("Fight")[0].remove();
+	document.getElementsByClassName("Fight")[0].remove();
 	myVar = setInterval(function(){myTimer()}, 1000);
 	checker = true;
 }
