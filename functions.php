@@ -26,6 +26,9 @@ function logout($username) {
 	return array("success"=>true, "message"=>"Goodbye! Come again NEVER!");
 }
 function func1($data){
+	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
+		or die('Could not connect: ' . mysql_error());
+	mysql_select_db('chefley') or die('Could not select database');
 	$username = $_SESSION["username"];
 	$names = mysql_query("Select * From ImageSet", $conn2);
 	for($i = 0; $i < 10; $i++){
@@ -33,9 +36,7 @@ function func1($data){
 			mysql_query("UPDATE ImageSet Set Image".$i.$j." = \"http://i38.tinypic.com/25ul6hg.jpg\" WHERE Image".$i.$j." = \"blue\"", $conn2);
 		}
 	}
-	$conn2 = mysql_connect('mysql.eecs.ku.edu', 'chefley', 'Ug67Ktg8')
-		or die('Could not connect: ' . mysql_error());
-	mysql_select_db('chefley') or die('Could not select database');
+
 	$query = "UPDATE User Set Loc = ".$data." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
 
