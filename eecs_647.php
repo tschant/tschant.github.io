@@ -57,13 +57,15 @@ $r = mysql_fetch_row($result);
 $_SESSION["username"] = $u[0];
 $offset = 5;
 
+$tree = "http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png";
+$grass = "http://i38.tinypic.com/25ul6hg.jpg";
 
 $elementsperrow = mysql_num_fields($result) - $offset;
 $elementsperrow = sqrt($elementsperrow);
 $percentelement = 100/ $elementsperrow;
 
 for($i = $offset; $i<mysql_num_fields ($result); $i++){
-	Echo "<div class = \"box\" id = \"box".$i."\">";
+	Echo "<div class = \"box\" id = \"box".$i."\" style=\"background-image: url(".$r[$i].");\">";
 	if($u[1] == $i){
 		Echo "<div id = \"me\">&nbsp;</div>";
 	}else{
