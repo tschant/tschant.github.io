@@ -75,7 +75,7 @@ function drawEnemies(numEnemies){
 	}
 }
 function enterFight(){
-
+/*
     	clearInterval(myVar);
 	checker = false;
 
@@ -99,7 +99,7 @@ function enterFight(){
 	//inner.onclick = exitFight;
 	
 	document.body.appendChild(div);
-	document.getElementByClassName("Fight")[0].appendChild(inner);
+	document.getElementByClassName("Fight")[0].appendChild(inner);*/
 }
 
 function exitFight(){
