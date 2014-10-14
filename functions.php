@@ -30,14 +30,14 @@ function func1($data){
 		or die('Could not connect: ' . mysql_error());
 	mysql_select_db('chefley') or die('Could not select database');
 	$username = $_SESSION["username"];
-	$names = mysql_query("Select * From ImageSet", $conn2);
+	/*$names = mysql_query("Select * From ImageSet", $conn2);
 	for($i = 0; $i < 10; $i++){
 		for($j = 0; $j <10; $j++){
 			mysql_query("UPDATE ImageSet Set Image".$i.$j." = \"http://i38.tinypic.com/25ul6hg.jpg\" WHERE Image".$i.$j." = \"blue\"", $conn2);
 			mysql_query("UPDATE ImageSet Set Image".$i.$j." = \"http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png\" WHERE Image".$i.$j." = \"green\"", $conn2);
 		}
 	}
-
+*/
 	$query = "UPDATE User Set Loc = ".$data." WHERE Username LIKE '".$username."'";
 	mysql_query($query,$conn2);
 
@@ -76,18 +76,18 @@ function leaveR($Loc, $Locid){
 	$elementsperrow = sqrt($elementsperrow);
 	$percentelement = 100/ $elementsperrow;
 	for($i = $offset; $i<mysql_num_fields ($result); $i++){
-	Echo "<div class = \"box\" id = \"box".$i."\">";
-	if($r[$i] != $grass){
-		Echo "<div class= \"object\" style =\"background-image: url(".$r[$i].");\">";
-	}if($u[1] == $i){
-		Echo "<div id = \"me\">&nbsp;</div>";
-	}else{
-		Echo "&nbsp;";
-	}if($r[$i] != $grass){
-		echo "</div>";
+		Echo "<div class = \"box\" id = \"box".$i."\">";
+		if($r[$i] != $grass){
+			Echo "<div class= \"object\" style =\"background-image: url(".$r[$i].");\">";
+		}if($u[1] == $i){
+			Echo "<div id = \"me\">&nbsp;</div>";
+		}else{
+			Echo "&nbsp;";
+		}if($r[$i] != $grass){
+			echo "</div>";
+		}
+		Echo "</div>";
 	}
-	Echo "</div>";
-}
 	return $code;
 }
 
