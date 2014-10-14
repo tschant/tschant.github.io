@@ -71,6 +71,8 @@ function leaveR($Loc, $Locid){
 	$r = mysql_fetch_row($result);
 	$offset = 5;
 	$code = "";
+	$tree = "http://fc02.deviantart.net/fs71/f/2012/171/3/7/37774bfd28fb3a1814046b2b37b18144-d546b3v.png";
+	$grass = "http://i38.tinypic.com/25ul6hg.jpg";
 	//$_SESSION["username"] = $u[0];
 	$elementsperrow = mysql_num_fields($result) - $offset;
 	$elementsperrow = sqrt($elementsperrow);
