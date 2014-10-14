@@ -76,17 +76,17 @@ function leaveR($Loc, $Locid){
 	$elementsperrow = sqrt($elementsperrow);
 	$percentelement = 100/ $elementsperrow;
 	for($i = $offset; $i<mysql_num_fields ($result); $i++){
-		$code = $code +  "<div class = \"box\" id = \"box".$i."\">";
+		$code = $code."<div class = \"box\" id = \"box".$i."\">";
 		if($r[$i] != $grass){
-			$code = $code + "<div class= \"object\" style =\"background-image: url(".$r[$i].");\">";
+			$code = $code."<div class= \"object\" style =\"background-image: url(".$r[$i].");\">";
 		}if($u[1] == $i){
-			$code = $code + "<div id = \"me\">&nbsp;</div>";
+			$code = $code."<div id = \"me\">&nbsp;</div>";
 		}else{
-			$code = $code + "&nbsp;";
+			$code = $code."&nbsp;";
 		}if($r[$i] != $grass){
-			$code = $code + "</div>";
+			$code = $code."</div>";
 		}
-		$code = $code + "</div>";
+		$code = $code."</div>";
 	}
 	return $code;
 }
