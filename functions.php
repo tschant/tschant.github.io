@@ -76,7 +76,7 @@ function leaveR($Loc, $Locid){
 	$elementsperrow = sqrt($elementsperrow);
 	$percentelement = 100/ $elementsperrow;
 	for($i = $offset; $i<mysql_num_fields ($result); $i++){
-		Echo "<div class = \"box\" id = \"box".$i."\">";
+		$code = $code +  "<div class = \"box\" id = \"box".$i."\">";
 		if($r[$i] != $grass){
 			$code = $code + "<div class= \"object\" style =\"background-image: url(".$r[$i].");\">";
 		}if($u[1] == $i){
