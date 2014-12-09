@@ -1,5 +1,6 @@
 <?
 session_start();
+
 $username = $_SESSION["username"];
 //Password has been removed...
 $conn2 = mysql_connect('localhost', 'chefley', '')
@@ -20,13 +21,10 @@ if (isset($_POST['callFunc1'])) {
 	echo getEnemies($_POST['getEnemies']);
 }if(isset($_POST["logout"])){
 	echo logout($_POST["logout"]);
+
 }if(isset($_POST["enemyNum"])){
 	echo returnEnemyInfo($_POST["enemyNum"]);
-}/* else (isset($_POST['flag'])) {
-	if($_POST['flag'] == 'sign_in'){
-		echo sign_in($_POST['user']);
-	}
-}*/
+
 
 
 
@@ -38,6 +36,7 @@ function logout($username) {
 	mysql_query($query,$conn2);
 	return array("success"=>true, "message"=>"Goodbye! Come again NEVER!");
 }
+
 
 function getEnemies($Locid){	
 	global $conn2;
@@ -98,7 +97,6 @@ function leaveR($Loc, $Locid){
 		}
 		$code = $code."</div>";
 	}
-
 	return json_encode(array($code, $r[4], $r[5], $r[6], $r[7], $r[2]));
 }
 
@@ -112,6 +110,7 @@ function leaveR($Loc, $Locid){
 	file_put_contents('functions.php', $file2);
 	include 'functions.php';
 }*/
+
 	/*$names = mysql_query("Select * From ImageSet", $conn2);
 	for($i = 0; $i < 10; $i++){
 		for($j = 0; $j <10; $j++){
