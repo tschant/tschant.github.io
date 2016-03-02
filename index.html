@@ -10,18 +10,19 @@
     -->
     <script src="https://www.google-analytics.com/cx/api.js?experiment=bPROXVaSTEu7oCSzXLE7qQ"></script>
 	<script type="text/javascript">
+	    var expId = 'bPROXVaSTEu7oCSzXLE7qQ';
+	    var expVar = 0;
 	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	    ga('create', 'UA-74422195-1', 'auto');
-	    var expVar = 0;
 	    if(navigator.cookieEnabled) {
     		expVar = cxApi.chooseVariation();
 	    } else {
 	    	cxApi.setChosenVariation(expVar);
 	    }
-    	    ga('set', 'expId', gaData.expId);
+    	    ga('set', 'expId', expId);
     	    ga('set', 'expVar', expVar);
 		/*if(expVar == 1) {
 			document.getElementById('testVarContainer1').classList.remove('well');
