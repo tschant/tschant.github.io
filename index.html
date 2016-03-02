@@ -15,11 +15,14 @@
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	    ga('create', 'UA-74422195-1', 'auto');
+	    var expVar = 0;
 	    if(navigator.cookieEnabled) {
-    		var expVar = cxApi.chooseVariation();
-    		ga('set', 'expId', gaData.expId);
-    		ga('set', 'expVar', expVar);
+    		expVar = cxApi.chooseVariation();
+	    } else {
+	    	cxApi.setChosenVariation(expVar);
 	    }
+    	    ga('set', 'expId', gaData.expId);
+    	    ga('set', 'expVar', expVar);
 		/*if(expVar == 1) {
 			document.getElementById('testVarContainer1').classList.remove('well');
 		} else if(expVar == 2) {
