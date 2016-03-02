@@ -8,7 +8,28 @@
     <!-- 
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     -->
-
+    <script src="https://www.google-analytics.com/cx/api.js?experiment=bPROXVaSTEu7oCSzXLE7qQ"></script>
+	<script type="text/javascript">
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	    ga('create', 'UA-74422195-1', 'auto');
+	    if(navigator.cookieEnabled) {
+    		var expVar = cxApi.chooseVariation();
+    		ga('set', 'expId', gaData.expId);
+    		ga('set', 'expVar', expVar);
+	    }
+		/*if(expVar == 1) {
+			document.getElementById('testVarContainer1').classList.remove('well');
+		} else if(expVar == 2) {
+			document.getElementById('testVarCol2').classList.add('well');
+		} else if(expVar == 3) {
+			document.getElementById('testVarContainer1').classList.remove('well');
+			document.getElementById('testVarCol2').classList.add('well');
+		}*/
+		ga('send', 'pageview')
+	</script>
     <body>
         <div class="container">
             <h1 style="text-align: center;"> HOME </h1>
